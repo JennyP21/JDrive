@@ -1,27 +1,25 @@
 :root {
   --searchbarwidth: 46rem;
+  --searchbarheight: 3rem;
 }
 
 /* Main Search Bar */
 .search-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  height: 3rem;
   overflow: hidden;
+  height: var(--searchbarheight);
   width: var(--searchbarwidth);
   border-radius: 25px;
-  position: relative;
 }
 
 .search-active {
-  border-bottom: 1px solid #e2e2e2;
-  height: 14rem;
+  box-shadow: 0 0 1px 1px #e2e2e2;
+  border-radius: 25px 25px 0 0;
 }
 
 .search-main {
   display: grid;
   grid-template-columns: 7% 86% 7%;
-  max-height: 3rem;
   align-items: center;
   justify-items: center;
   border-radius: 25px;
@@ -29,9 +27,7 @@
 }
 
 .search-active .search-main {
-  border-radius: 25px 25px 0 0;
   background-color: #fff;
-  border: 1px solid #e2e2e2;
 }
 
 .search-icon,
@@ -59,6 +55,16 @@
   background-color: inherit;
 }
 
+/* Search Dropdown Container */
+
+.search-dropdown {
+  position: absolute;
+  top: calc(var(--searchbarheight) + 9px);
+  width: 46rem;
+  box-shadow: 0 1px 1px 1px #e2e2e2;
+  border-radius: 0 0 25px 25px;
+}
+
 /* Recent Search Window */
 
 .recent-search {
@@ -72,9 +78,8 @@
 }
 
 .recent-search-container {
-  position: absolute;
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 95%;
   justify-items: center;
   align-items: center;
   height: 3rem;
@@ -112,7 +117,7 @@
   grid-template-rows: 1fr 1fr;
   align-items: center;
   justify-items: center;
-  height: 5rem;
+  height: 4rem;
   padding: 0.5rem 0;
 }
 
@@ -129,7 +134,6 @@
 .filetype-text {
   font-size: 12px;
   margin: 0;
-  margin-bottom: 0.5rem;
 }
 
 /* Search More window */

@@ -1,124 +1,105 @@
 .adsearch {
-  display: grid;
-  position: absolute;
-  gap: 1.5rem;
-  max-width: 43rem;
-  box-shadow: 0 5px 5px 3px #ccc;
   border-radius: 10px;
-  padding: 1rem 1.5rem;
-  z-index: 1;
+  box-shadow: 0 5px 5px 3px #ccc;
+  display: grid;
+  gap: 1.5rem;
   margin-left: 14%;
+  min-width: 43rem;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: calc(var(--searchbarheight) + 0.6rem);
+  z-index: 1;
 }
-
 .adsearch-label {
+  align-self: center;
   font-size: 0.875rem;
   font-weight: bold;
-  align-self: center;
 }
-
 .container {
   display: grid;
   grid-template-columns: 20% 40% 40%;
   padding-right: 1.5rem;
 }
-
 .adsearch-close {
   justify-self: end;
+  margin-top: -0.8rem;
   padding: 1rem;
   transform: translateX(1rem);
-  margin-top: -0.8rem;
 }
-
 .adsearch-type {
   margin-top: -2.5rem;
 }
-
 .adsearch-close:hover {
-  transition: background 0.3s ease;
   background: #eee;
   border-radius: 50%;
+  transition: background 0.3s ease;
 }
-
 .adsearch-options,
 .adsearch-input input {
-  font-size: 0.875rem;
-  padding: 10px;
-  width: 250px;
   background: #fff;
   border-radius: 5px;
   border: 1px solid #000;
+  font-size: 0.875rem;
   outline: none;
+  padding: 10px;
+  width: 250px;
 }
-
 .adsearch-words .adsearch-input,
 .adsearch-item-name .adsearch-input {
   grid-column: 2 / 4;
 }
-
 .adsearch-words .adsearch-input input,
 .adsearch-item-name .adsearch-input input {
   width: 100%;
 }
-
 .adsearch-location {
   grid-template-columns: 20% 80%;
 }
-
 .adsearch-location .adsearch-checkbox {
   grid-column: 2 / 3;
 }
-
 .adsearch-checkbox input:hover {
   background: #ccc;
-  padding: 4rem;
   border-radius: 50%;
   border: 1px solid black;
+  padding: 4rem;
 }
-
 .adsearch-location .adsearch-checkbox > * {
-  margin-top: 1rem;
   margin-left: 1rem;
+  margin-top: 1rem;
 }
-
 .adsearch-approvals .adsearch-checkbox {
   grid-column: 2 / 4;
 }
-
 .adsearch-approvals .adsearch-checkbox > * {
   margin-left: 1rem;
 }
-
 .adsearch-submit {
   display: grid;
 }
-
 .adsearch-submit a {
-  text-decoration: none;
   color: #0b57d0;
+  text-decoration: none;
 }
-
 .adsearch-button {
   grid-column: 2/4;
   justify-self: end;
 }
-
 .adsearch-learn-button:hover,
 .adsearch-button-reset:hover {
   color: #0844a5;
 }
-
 .adsearch-button-search {
-  color: #fff;
-  padding: 0.5rem 1.5rem;
   background-color: #0b57d0;
-  font-size: 1rem;
   border-radius: 25px;
-  outline: none;
   border: none;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
   transform: translateX(1.5rem);
   transition: background 0.3s ease;
 }
-
 .adsearch-button-search:hover {
   background-color: #0844a5;
 }

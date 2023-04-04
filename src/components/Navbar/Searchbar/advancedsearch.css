@@ -3,13 +3,14 @@
   box-shadow: 0 5px 5px 3px #ccc;
   display: grid;
   gap: 1.5rem;
-  margin-left: 14%;
+  margin-left: var(--navbar-logowidth);
   min-width: 43rem;
   padding: 1rem 1.5rem;
   position: absolute;
   top: calc(var(--searchbarheight) + 0.6rem);
   z-index: 1;
 }
+
 .adsearch-label {
   align-self: center;
   font-size: 0.875rem;

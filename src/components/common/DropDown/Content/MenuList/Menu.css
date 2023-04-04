@@ -1,0 +1,57 @@
+.menu {
+  display: grid;
+  max-height: calc(100vh / 2);
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: -350px;
+  border-radius: 10px;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.menu-hidden {
+  --display: none;
+  height: 0;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+}
+
+.menu-visible {
+  --display: grid;
+  height: fit-content;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  box-shadow: 0 0 1px 1px #999;
+}
+
+.menu-visible::-webkit-scrollbar {
+  width: 8px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu-visible::-webkit-scrollbar-thumb {
+  background: #ccc;
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+.menu-item {
+  display: var(--display);
+  justify-items: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 1rem;
+  max-height: 5rem;
+  max-width: 5rem;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: #ccc;
+}
+
+.menu-item-text {
+  margin: 0;
+  margin-top: 10px;
+}

@@ -1,0 +1,51 @@
+:root {
+  --leftpanel-width: 250px;
+}
+
+.leftpanel {
+  display: grid;
+  max-width: var(--leftpanel-width);
+  padding: 1rem;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.leftpanel-item {
+  padding: 0.3rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 20px;
+  width: calc(var(--leftpanel-width) * 2.8 / 3);
+  cursor: pointer;
+}
+
+.leftpanel-item.active {
+  background-color: #c2e7ff;
+}
+
+.leftpanel-item:hover {
+  background-color: #dfdfdf;
+}
+
+.leftpanel-item.active:hover {
+  background-color: none;
+}
+
+.leftpanel-icon {
+  transform: translateY(4px);
+}
+
+.leftpanel-text {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.expandable-arrow {
+  transform: translateY(3px);
+}
+
+.expandable-arrow.open {
+  transform: translateY(3px) rotate(90deg);
+}
+
+.shared .leftpanel-icon {
+  margin-left: 1rem;
+}

@@ -50,7 +50,10 @@ const Search = ({
           <div className="search-dropdown">
             <RecentSearch />
             <FileTypeSearch />
-            <SearchMore />
+            <SearchMore
+              adSearchVisibility={adSearchVisibility}
+              setAdSearchVisibility={setAdSearchVisibility}
+            />
           </div>
         )}
       </div>

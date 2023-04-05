@@ -15,7 +15,7 @@ const LeftPanel = () => {
 
   return (
     <div className="leftpanel">
-      <div className="leftpanel-item my-drive active">
+      <div className="leftpanel-item my-drive selected">
         <RxTriangleRight
           className="expandable-arrow"
           onClick={(event) => handleExpand(event)}

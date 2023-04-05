@@ -34,6 +34,15 @@
   border: none;
   z-index: 1;
 }
+
+.search-icon {
+  margin-left: 0.2rem;
+}
+
+.search-menu-icon {
+  margin-right: 0.2rem;
+}
+
 .search-icon:hover,
 .search-menu-icon:hover {
   background-color: #e2e2e2;

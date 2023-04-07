@@ -11,6 +11,7 @@
   height: var(--searchbarheight);
   overflow: hidden;
   width: var(--searchbarwidth);
+  z-index: 1;
 }
 .search-active {
   border-radius: 25px 25px 0 0;

@@ -9,6 +9,7 @@
   padding: 1rem 1.5rem;
   position: absolute;
   transform: translateY(3.5rem);
+  z-index: 1;
 }
 
 .adsearch-label {

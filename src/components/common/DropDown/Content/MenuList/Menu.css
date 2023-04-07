@@ -6,6 +6,8 @@
   border-radius: 10px;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 1;
 }
 
 .menu-hidden {

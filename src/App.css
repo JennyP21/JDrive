@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: var(--navbar-logowidth) 1fr;
   grid-template-rows: 4% 96%;
+  position: relative;
 }
 
 .list {

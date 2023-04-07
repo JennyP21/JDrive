@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Logo from "./Logo/Logo";
-import Search from "./Searchbar/Search";
 import "./navbar.css";
-import AdvancedSearch from "./Searchbar/AdvancedSearch";
-import Elements from "./Elements/Elements";
+import Logo from "../Content/Logo/Logo";
+import Elements from "../Content/Elements/Elements";
+import AdvancedSearch from "../Content/Searchbar/AdvancedSearch";
+import Search from "../Content/Searchbar/Search";
 
 const Navbar = () => {
   const [adSearchVisibility, setAdSearchVisibility] = useState(false);

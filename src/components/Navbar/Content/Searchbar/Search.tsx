@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import "./search.css";
-import GetIcon from "../../common/Icons/GetIcon";
+
 import RecentSearch from "./RecentSearch";
 import SearchMore from "./SearchMore";
 import FileTypeSearch from "./FileTypeSearch";
 import { AdvancedSearchProps } from "./AdvancedSearch";
+import GetIcon from "../../../common/Icons/GetIcon";
 
 const Search = ({
   adSearchVisibility,

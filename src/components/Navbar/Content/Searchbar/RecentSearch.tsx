@@ -1,4 +1,4 @@
-import GetIcon from "../../common/Icons/GetIcon";
+import GetIcon from "../../../common/Icons/GetIcon";
 
 const RecentSearch = () => {
   return (

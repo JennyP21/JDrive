@@ -1,0 +1,46 @@
+.file-list {
+  font-size: 0.875rem;
+  width: 100%;
+  margin: 1rem 0 0 0.5rem;
+}
+
+.file-list-header {
+  position: sticky;
+}
+
+.file-list-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.file-list-header .file-list-row,
+.file-list-body .file-list-row {
+  display: grid;
+  grid-template-columns: 50% 20% 8% 8% 14%;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+}
+
+.file-list-header .file-list-row {
+  padding-bottom: 0.5rem;
+}
+
+.file-list-body .file-list-row {
+  color: #555;
+  font-weight: 400;
+}
+
+.file-list-body .file-list-row:hover {
+  background-color: #eee;
+}
+
+.file-list-body .file-list-row span {
+  padding: 1rem 1rem 1rem 0;
+}
+
+.name-datacell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
+}

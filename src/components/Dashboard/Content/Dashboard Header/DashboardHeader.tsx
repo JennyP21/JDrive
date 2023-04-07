@@ -12,9 +12,8 @@ const DashboardHeader = () => {
     <div className="dashboard-header">
       <div className="dashboard-filepath">
         <div className="filepath-name">
-          <h2>
-            My Drive <RxTriangleDown className="filepath-icon" />
-          </h2>
+          <span>My Drive</span>
+          <RxTriangleDown size={18} className="filepath-icon" />
         </div>
       </div>
       <div className="dashboard-settings">

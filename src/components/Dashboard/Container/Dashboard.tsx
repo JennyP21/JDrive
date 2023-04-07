@@ -1,14 +1,12 @@
 import DashboardHeader from "../Content/Dashboard Header/DashboardHeader";
-import FileTable from "../Content/FileTable/FileTable";
-import Suggestions from "../Content/Suggestions/Suggestions";
+import MyDrive from "../Content/My Drive/MyDrive";
 import "./dashboard.css";
 
 const Dashboard = () => {
   return (
     <div className="dashboard">
       <DashboardHeader />
-      <Suggestions />
-      <FileTable />
+      <MyDrive />
     </div>
   );
 };

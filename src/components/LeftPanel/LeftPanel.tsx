@@ -15,6 +15,7 @@ const LeftPanel = () => {
 
   return (
     <div className="leftpanel">
+      <button className="leftpanel-button">+ New</button>
       <div className="leftpanel-item my-drive selected">
         <RxTriangleRight
           className="expandable-arrow"

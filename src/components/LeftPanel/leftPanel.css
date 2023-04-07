@@ -5,10 +5,27 @@
 .leftpanel {
   display: grid;
   max-width: var(--leftpanel-width);
-  padding: 1rem;
-  padding-left: 0;
-  margin-top: 1rem;
+  margin: 1rem 1rem auto 1rem;
   align-self: start;
+}
+
+.leftpanel-button {
+  width: 42%;
+  padding: 1.5rem 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 2px 5px 1px #999;
+  font-size: 1.2rem;
+  transition: all 0.4s ease;
+}
+
+.leftpanel-button:hover {
+  background-color: #d3e3fd;
+  box-shadow: 0 2px 5px 2px #999;
+  transition: all 0.4s ease;
 }
 
 .leftpanel-item {

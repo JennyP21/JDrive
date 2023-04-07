@@ -1,16 +1,21 @@
 :root {
   --navbar-logowidth: 14%;
+  --navbar-elementwidth: 46%;
+  --navbar-searchwidth: 40%;
 }
 
 @media only screen and (min-width: 1270px) and (max-width: 1605px) {
   :root {
     --navbar-logowidth: 20%;
+    --navbar-elementwidth: 40%;
   }
 }
 
 .nav {
   display: grid;
-  grid-template-columns: var(--navbar-logowidth) 40% 40%;
+  grid-template-columns: var(--navbar-logowidth) var(--navbar-searchwidth) var(
+      --navbar-elementwidth
+    );
   margin: 0.5rem;
   grid-column: 1 / 3;
 }

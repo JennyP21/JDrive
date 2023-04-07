@@ -25,11 +25,13 @@
 }
 
 .list-visible {
+  background-color: #fff;
   height: fit-content;
   overflow: visible;
   padding: 10px 0;
   box-shadow: 0 0 4px 1px #ccc;
   transition: all 70ms linear;
+  background-color: #fff;
 }
 
 .list-item {

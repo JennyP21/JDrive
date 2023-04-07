@@ -22,6 +22,7 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
   box-shadow: 0 0 1px 1px #999;
+  background-color: #fff;
 }
 
 .menu-visible::-webkit-scrollbar {

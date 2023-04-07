@@ -1,0 +1,44 @@
+.dashboard-header {
+  display: grid;
+  grid-template-columns: 90% 10%;
+}
+
+.filepath-name {
+  color: #444;
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.1rem;
+  margin: 0.5rem;
+  margin-left: 0;
+  border-radius: 25px;
+}
+
+.filepath-name h2 {
+  margin: 0.3rem;
+  margin-left: 0;
+}
+
+.filepath-name:hover {
+  background-color: #ccc;
+}
+
+.filepath-icon {
+  transform: translateY(5px);
+}
+
+.dashboard-settings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.dashboard-data-layout,
+.dashboard-data-info {
+  padding: 0.7rem;
+  border-radius: 50%;
+}
+.dashboard-data-layout:hover,
+.dashboard-data-info:hover {
+  background-color: #eee;
+}

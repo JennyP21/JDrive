@@ -1,14 +1,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import LeftPanel from "./components/LeftPanel/LeftPanel";
-import Content from "./components/Content/Content";
+import Dashboard from "./components/Dashboard/Container/Dashboard";
 
 const App = () => {
   return (
     <div className="main">
       <Navbar />
       <LeftPanel />
-      <Content />
+      <Dashboard />
     </div>
   );
 };

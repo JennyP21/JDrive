@@ -1,8 +1,7 @@
-.content {
+.dashboard {
   padding: 1rem;
   background-color: #fff;
   border-radius: 20px;
   margin: 0.5rem;
-  display: grid;
-  grid-template-rows: 5% 30% 65%;
+  height: 85vh;
 }

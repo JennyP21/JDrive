@@ -1,0 +1,14 @@
+.table {
+  font-size: 1.3rem;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.table-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.table-name {
+  width: 50%;
+}

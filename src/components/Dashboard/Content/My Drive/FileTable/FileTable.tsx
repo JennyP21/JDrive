@@ -15,6 +15,10 @@ interface Props {
 }
 
 const FileTable = ({ files }: Props) => {
+  const handleMouseOver = (target: EventTarget) => {
+    console.log(target);
+  };
+
   return (
     <div className="file-list">
       <div className="file-list-header">
@@ -28,7 +32,11 @@ const FileTable = ({ files }: Props) => {
       </div>
       <div className="file-list-body">
         {files.map(({ fileName, fileType, fileSize, lastModified, owner }) => (
-          <div className="file-list-row" key={fileName}>
+          <div
+            className="file-list-row"
+            key={fileName}
+            onMouseOver={(e) => handleMouseOver(e.target)}
+          >
             <span className="name-datacell">
               <GetIcon
                 className="name-datacell-icon"

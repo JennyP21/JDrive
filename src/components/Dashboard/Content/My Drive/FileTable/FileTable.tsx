@@ -1,3 +1,4 @@
+import { useState } from "react";
 import GetIcon from "../../../../common/Icons/GetIcon";
 import "./fileTable.css";
 
@@ -42,7 +43,40 @@ const FileTable = ({ files }: Props) => {
               {lastModified.toString()}
             </span>
             <span className="file-size-datacell">{fileSize}</span>
-            <span className="options-datacell">...</span>
+            <span className="options-datacell">
+              <div className="options-hidden">
+                <GetIcon
+                  className="options-datacell-icon"
+                  iconType="addUser"
+                  iconSize={20}
+                  onClick={() => null}
+                />
+                <GetIcon
+                  className="options-datacell-icon"
+                  iconType="download"
+                  iconSize={20}
+                  onClick={() => null}
+                />
+                <GetIcon
+                  className="options-datacell-icon"
+                  iconType="edit"
+                  iconSize={20}
+                  onClick={() => null}
+                />
+                <GetIcon
+                  className="options-datacell-icon"
+                  iconType="starEmpty"
+                  iconSize={20}
+                  onClick={() => null}
+                />
+              </div>
+              <GetIcon
+                className="options-datacell-icon"
+                iconType="dotsVirtical"
+                iconSize={20}
+                onClick={() => null}
+              />
+            </span>
           </div>
         ))}
       </div>

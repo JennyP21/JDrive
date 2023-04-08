@@ -8,6 +8,8 @@ import {
   AiFillProfile,
   AiOutlineClose,
   AiOutlineUserAdd,
+  AiOutlineStar,
+  AiFillStar,
 } from "react-icons/ai";
 import { FcDocument, FcGoogle, FcContacts } from "react-icons/fc";
 import {
@@ -24,7 +26,12 @@ import {
 } from "react-icons/si";
 import { IoMdOptions } from "react-icons/io";
 import { BsFileEarmarkSlides, BsSearch } from "react-icons/bs";
-import { BiHistory } from "react-icons/bi";
+import {
+  BiHistory,
+  BiDownload,
+  BiEditAlt,
+  BiDotsVerticalRounded,
+} from "react-icons/bi";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaYoutube, FaGooglePlay, FaGoogleDrive } from "react-icons/fa";
 import { CiShoppingTag } from "react-icons/ci";
@@ -65,7 +72,12 @@ interface IconProps {
     | "adCenter"
     | "shopping"
     | "addUser"
-    | "logout";
+    | "logout"
+    | "download"
+    | "edit"
+    | "starEmpty"
+    | "starFilled"
+    | "dotsVirtical";
   iconSize: number;
   className: string;
   color?: string;
@@ -107,6 +119,11 @@ const GetIcon = (
     shopping: CiShoppingTag,
     addUser: AiOutlineUserAdd,
     logout: MdLogout,
+    download: BiDownload,
+    edit: BiEditAlt,
+    starEmpty: AiOutlineStar,
+    starFilled: AiFillStar,
+    dotsVirtical: BiDotsVerticalRounded,
   };
 
   const Icon = iconMapping[iconType];

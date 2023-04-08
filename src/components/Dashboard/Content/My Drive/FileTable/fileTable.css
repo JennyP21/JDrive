@@ -44,3 +44,16 @@
   gap: 1rem;
   margin-left: 1rem;
 }
+
+.options-datacell {
+  display: flex;
+}
+
+.options-datacell-icon {
+  padding: 0.5rem;
+  border-radius: 25px;
+}
+
+.options-datacell-icon:hover {
+  background-color: #ddd;
+}

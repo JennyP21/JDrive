@@ -8,6 +8,10 @@
   position: sticky;
 }
 
+.selected {
+  background-color: #c2e7ff;
+}
+
 .file-list-row {
   border-bottom: 1px solid #ccc;
 }

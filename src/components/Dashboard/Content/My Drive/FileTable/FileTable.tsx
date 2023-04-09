@@ -60,9 +60,16 @@ const FileTable = ({ files }: Props) => {
     if (parentElement?.querySelector(".options-visible") === null) {
       parentElement = parentElement.closest(".file-list-row");
     }
-    let checkbox = parentElement?.querySelector(".name-datacell");
-    checkbox?.children[0]?.classList.remove("hidden");
-    checkbox?.children[1]?.classList.add("hidden");
+
+    const checkbox = parentElement?.querySelector(
+      ".name-datacell-checkbox"
+    ) as HTMLInputElement;
+
+    if (!checkbox.checked) {
+      let replaceCheckbox = parentElement?.querySelector(".name-datacell");
+      replaceCheckbox?.children[0]?.classList.remove("hidden");
+      replaceCheckbox?.children[1]?.classList.add("hidden");
+    }
   };
 
   const handleFileRowClick = (target: EventTarget) => {
@@ -75,7 +82,9 @@ const FileTable = ({ files }: Props) => {
     const checkbox = parentElement?.querySelector(
       ".name-datacell-checkbox"
     ) as HTMLInputElement;
+
     checkbox.checked = !checkbox.checked;
+    parentElement?.classList.toggle("selected");
   };
 
   return (

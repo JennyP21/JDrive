@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import GetIcon from "../../../../common/Icons/GetIcon";
 import "./fileTable.css";
 
@@ -15,8 +15,38 @@ interface Props {
 }
 
 const FileTable = ({ files }: Props) => {
-  const handleMouseOver = (target: EventTarget) => {
-    console.log(target);
+  const showOptions = (target: EventTarget) => {
+    let parentElement = target as HTMLElement | null;
+
+    if (parentElement?.querySelector(".options-hidden") === null) {
+      parentElement = parentElement.closest(".file-list-row");
+    }
+    // Show the hidden options on hover
+    let showOptions = parentElement?.querySelector(".options-hidden");
+    showOptions?.classList.remove("options-hidden");
+    showOptions?.classList.add("options-visible");
+
+    // Replace Checkbox with fileIcon
+    let replaceFileTypeIcon = parentElement?.querySelector(".name-datacell");
+    replaceFileTypeIcon?.children[0]?.classList.toggle("hidden");
+    replaceFileTypeIcon?.children[1]?.classList.toggle("hidden");
+  };
+
+  const hideOptions = (target: EventTarget) => {
+    let parentElement = target as HTMLElement | null;
+
+    if (parentElement?.querySelector(".options-visible") === null) {
+      parentElement = parentElement.closest(".file-list-row");
+    }
+    // Show the hidden options on hover
+    let hideOptions = parentElement?.querySelector(".options-visible");
+    hideOptions?.classList.remove("options-visible");
+    hideOptions?.classList.add("options-hidden");
+
+    // Replace fileIcon with Checkbox
+    let replaceFileTypeIcon = parentElement?.querySelector(".name-datacell");
+    replaceFileTypeIcon?.children[0]?.classList.toggle("hidden");
+    replaceFileTypeIcon?.children[1]?.classList.toggle("hidden");
   };
 
   return (
@@ -35,7 +65,8 @@ const FileTable = ({ files }: Props) => {
           <div
             className="file-list-row"
             key={fileName}
-            onMouseOver={(e) => handleMouseOver(e.target)}
+            onMouseEnter={(e) => showOptions(e.target)}
+            onMouseLeave={(e) => hideOptions(e.target)}
           >
             <span className="name-datacell">
               <GetIcon
@@ -43,6 +74,11 @@ const FileTable = ({ files }: Props) => {
                 iconType={fileType}
                 iconSize={25}
                 onClick={() => null}
+              />
+              <input
+                type="checkbox"
+                className="name-datacell-checkbox hidden"
+                value={fileName}
               />
               <span className="name-datacell-text">{fileName}</span>
             </span>

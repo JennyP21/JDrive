@@ -51,7 +51,7 @@
 }
 
 .options-datacell-icon {
-  padding: 0.5rem;
+  padding: 0.3rem;
   border-radius: 25px;
 }
 
@@ -59,6 +59,23 @@
   background-color: #ddd;
 }
 
-.options-hidden {
+.name-datacell-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.name-datacell-checkbox:hover {
+  background-color: #ddd;
+}
+
+.options-visible {
   display: block;
+}
+
+.options-hidden {
+  display: none;
+}
+
+.hidden {
+  display: none;
 }

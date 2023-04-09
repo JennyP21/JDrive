@@ -26,10 +26,9 @@ const FileTable = ({ files }: Props) => {
     showOptions?.classList.remove("options-hidden");
     showOptions?.classList.add("options-visible");
 
-    // Replace Checkbox with fileIcon
     let replaceFileTypeIcon = parentElement?.querySelector(".name-datacell");
-    replaceFileTypeIcon?.children[0]?.classList.toggle("hidden");
-    replaceFileTypeIcon?.children[1]?.classList.toggle("hidden");
+    replaceFileTypeIcon?.children[0]?.classList.add("hidden");
+    replaceFileTypeIcon?.children[1]?.classList.remove("hidden");
   };
 
   const hideOptions = (target: EventTarget) => {
@@ -42,11 +41,41 @@ const FileTable = ({ files }: Props) => {
     let hideOptions = parentElement?.querySelector(".options-visible");
     hideOptions?.classList.remove("options-visible");
     hideOptions?.classList.add("options-hidden");
+  };
 
-    // Replace fileIcon with Checkbox
+  const showCheckBox = (target: EventTarget) => {
+    let parentElement = target as HTMLElement | null;
+
+    if (parentElement?.querySelector(".options-visible") === null) {
+      parentElement = parentElement.closest(".file-list-row");
+    }
     let replaceFileTypeIcon = parentElement?.querySelector(".name-datacell");
-    replaceFileTypeIcon?.children[0]?.classList.toggle("hidden");
-    replaceFileTypeIcon?.children[1]?.classList.toggle("hidden");
+    replaceFileTypeIcon?.children[0]?.classList.add("hidden");
+    replaceFileTypeIcon?.children[1]?.classList.remove("hidden");
+  };
+
+  const hideCheckBox = (target: EventTarget) => {
+    let parentElement = target as HTMLElement | null;
+
+    if (parentElement?.querySelector(".options-visible") === null) {
+      parentElement = parentElement.closest(".file-list-row");
+    }
+    let checkbox = parentElement?.querySelector(".name-datacell");
+    checkbox?.children[0]?.classList.remove("hidden");
+    checkbox?.children[1]?.classList.add("hidden");
+  };
+
+  const handleFileRowClick = (target: EventTarget) => {
+    let parentElement = target as HTMLElement | null;
+
+    if (parentElement?.querySelector(".options-visible") === null) {
+      parentElement = parentElement.closest(".file-list-row");
+    }
+
+    const checkbox = parentElement?.querySelector(
+      ".name-datacell-checkbox"
+    ) as HTMLInputElement;
+    checkbox.checked = !checkbox.checked;
   };
 
   return (
@@ -65,8 +94,17 @@ const FileTable = ({ files }: Props) => {
           <div
             className="file-list-row"
             key={fileName}
-            onMouseEnter={(e) => showOptions(e.target)}
-            onMouseLeave={(e) => hideOptions(e.target)}
+            onMouseEnter={(e) => {
+              showOptions(e.target);
+              showCheckBox(e.target);
+            }}
+            onMouseLeave={(e) => {
+              hideOptions(e.target);
+              hideCheckBox(e.target);
+            }}
+            onClick={(e) => {
+              handleFileRowClick(e.target);
+            }}
           >
             <span className="name-datacell">
               <GetIcon
@@ -93,32 +131,27 @@ const FileTable = ({ files }: Props) => {
                   className="options-datacell-icon"
                   iconType="addUser"
                   iconSize={20}
-                  onClick={() => null}
                 />
                 <GetIcon
                   className="options-datacell-icon"
                   iconType="download"
                   iconSize={20}
-                  onClick={() => null}
                 />
                 <GetIcon
                   className="options-datacell-icon"
                   iconType="edit"
                   iconSize={20}
-                  onClick={() => null}
                 />
                 <GetIcon
                   className="options-datacell-icon"
                   iconType="starEmpty"
                   iconSize={20}
-                  onClick={() => null}
                 />
               </div>
               <GetIcon
                 className="options-datacell-icon"
                 iconType="dotsVirtical"
                 iconSize={20}
-                onClick={() => null}
               />
             </span>
           </div>

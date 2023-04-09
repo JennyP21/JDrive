@@ -39,7 +39,7 @@ import { MdLogout } from "react-icons/md";
 import { RxTriangleDown } from "react-icons/rx";
 
 interface IconProps {
-  onClick: () => void;
+  onClick?: () => void;
   iconType:
     | string
     | "options"

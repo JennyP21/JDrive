@@ -3,11 +3,15 @@
   grid-template-columns: 94% 6%;
 }
 
+.dashboard-filepath {
+  display: flex;
+}
+
 .filepath-name {
   color: #444;
   cursor: pointer;
   width: fit-content;
-  padding: 0.5rem 0.7rem;
+  padding: 0.3rem 0.7rem;
   margin: 0.5rem;
   margin-left: 0;
   border-radius: 25px;

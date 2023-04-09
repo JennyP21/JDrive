@@ -1,7 +1,7 @@
-import "./dropDown.css";
 import { useState } from "react";
-import GetIcon from "../../Icons/GetIcon";
-import FolderList from "../Content/FolderList/FolderList";
+import GetIcon from "../../../Icons/GetIcon";
+import FolderList from "../../Content/FolderList/FolderList";
+import "./folderDropDown.css";
 
 interface Props {
   className: string;
@@ -13,7 +13,7 @@ const FolderDropDow = ({ items, folderName, className }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   return (
-    <div className="dropdown">
+    <div className="folder-dropdown">
       <div
         className={className}
         onClick={() => setItemVisibility(!itemVisibility)}

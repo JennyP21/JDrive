@@ -3,8 +3,7 @@ import "./dashboardHeader.css";
 import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineViewList } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
-import { RxTriangleDown } from "react-icons/rx";
-import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown";
+import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
 
 interface Props {
   items: string[];

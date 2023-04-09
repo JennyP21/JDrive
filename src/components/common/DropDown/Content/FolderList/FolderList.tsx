@@ -16,7 +16,7 @@ const FolderList = ({ items, listVisible }: Props) => {
   }, [listVisible]);
 
   return (
-    <ul ref={listRef} className="list list-hidden">
+    <ul ref={listRef} className="folderList list-hidden">
       {items.map((item) => (
         <li className="list-item" key={item}>
           {item}

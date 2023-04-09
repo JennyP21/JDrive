@@ -2,10 +2,14 @@ import DashboardHeader from "../Content/Dashboard Header/DashboardHeader";
 import MyDrive from "../Content/My Drive/MyDrive";
 import "./dashboard.css";
 
-const Dashboard = () => {
+interface Props {
+  items: string[];
+}
+
+const Dashboard = ({ items }: Props) => {
   return (
     <div className="dashboard">
-      <DashboardHeader />
+      <DashboardHeader items={items} />
       <MyDrive />
     </div>
   );

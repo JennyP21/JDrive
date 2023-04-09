@@ -1,6 +1,6 @@
 .dashboard-header {
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 94% 6%;
 }
 
 .filepath-name {
@@ -35,9 +35,15 @@
 
 .dashboard-data-layout,
 .dashboard-data-info {
-  padding: 0.7rem;
-  border-radius: 50%;
+  border-radius: 25px;
+  display: grid;
+  align-items: center;
 }
+
+.dashboard-data-layout-icon {
+  padding: 0.7rem;
+}
+
 .dashboard-data-layout:hover,
 .dashboard-data-info:hover {
   background-color: #eee;

@@ -36,6 +36,7 @@ import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaYoutube, FaGooglePlay, FaGoogleDrive } from "react-icons/fa";
 import { CiShoppingTag } from "react-icons/ci";
 import { MdLogout } from "react-icons/md";
+import { RxTriangleDown } from "react-icons/rx";
 
 interface IconProps {
   onClick: () => void;
@@ -77,7 +78,8 @@ interface IconProps {
     | "edit"
     | "starEmpty"
     | "starFilled"
-    | "dotsVirtical";
+    | "dotsVirtical"
+    | "triangleDown";
   iconSize: number;
   className: string;
   color?: string;
@@ -124,6 +126,7 @@ const GetIcon = (
     starEmpty: AiOutlineStar,
     starFilled: AiFillStar,
     dotsVirtical: BiDotsVerticalRounded,
+    triangleDown: RxTriangleDown,
   };
 
   const Icon = iconMapping[iconType];

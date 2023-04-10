@@ -1,50 +1,55 @@
-import { FcGoogle } from "react-icons/fc";
 import "./suggestions.css";
+import GetIcon from "../../../../common/Icons/GetIcon";
+import { useEffect, useRef, useState } from "react";
 
-const Suggestions = () => {
+interface SuggestionsProps {
+  fileType: string;
+  fileName: string;
+  activity: string;
+}
+
+interface Props {
+  suggestedFiles: SuggestionsProps[];
+}
+
+const Suggestions = ({ suggestedFiles }: Props) => {
+  const [activeElementIndex, setActiveElementIndex] = useState(-1);
+
   return (
-    <div className="suggetions">
+    <div
+      className="suggetions"
+      onClick={(event) => {
+        event.preventDefault();
+        const selectedTarget = (event.target as HTMLElement).closest(
+          ".suggestion"
+        ) as HTMLElement;
+        const suggestionElements = [
+          ...document.getElementsByClassName("suggestion"),
+        ];
+
+        if (!suggestionElements.includes(selectedTarget)) {
+          setActiveElementIndex(-1);
+        }
+      }}
+    >
       <h4 className="suggestions-heading">Suggested</h4>
-      <div className="suggestion">
-        <div className="file">
-          <FcGoogle className="file-icon" size={18} />
-          <span className="file-name">How to make website.docs</span>
+
+      {suggestedFiles.map(({ fileName, fileType, activity }, index) => (
+        <div
+          className={
+            activeElementIndex === index ? "suggestion selected" : "suggestion"
+          }
+          key={fileName}
+          onClick={(e) => setActiveElementIndex(index)}
+        >
+          <div className="file">
+            <GetIcon className="" iconSize={18} iconType={fileType} />
+            <span className="file-name">{fileName}</span>
+          </div>
+          <div className="preview"></div>
+          <p className="activity">{activity}</p>
         </div>
-        <div className="preview"></div>
-        <p className="activity">You opened this file last week.</p>
-      </div>
-      <div className="suggestion">
-        <div className="file">
-          <FcGoogle className="file-icon" size={18} />
-          <span className="file-name">How to make website.docs</span>
-        </div>
-        <div className="preview"></div>
-        <p className="activity">You opened this file last week.</p>
-      </div>
-      <div className="suggestion">
-        <div className="file">
-          <FcGoogle className="file-icon" size={18} />
-          <span className="file-name">How to make website.docs</span>
-        </div>
-        <div className="preview"></div>
-        <p className="activity">You opened this file last week.</p>
-      </div>
-      <div className="suggestion">
-        <div className="file">
-          <FcGoogle className="file-icon" size={18} />
-          <span className="file-name">How to make website.docs</span>
-        </div>
-        <div className="preview"></div>
-        <p className="activity">You opened this file last week.</p>
-      </div>
-      <div className="suggestion">
-        <div className="file">
-          <FcGoogle className="file-icon" size={18} />
-          <span className="file-name">How to make website.docs</span>
-        </div>
-        <div className="preview"></div>
-        <p className="activity">You opened this file last week.</p>
-      </div>
+      ))}
     </div>
   );
 };

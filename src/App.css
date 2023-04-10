@@ -1,7 +1,8 @@
 .main {
   display: grid;
   grid-template-columns: var(--navbar-logowidth) 1fr;
-  grid-template-rows: 4% 96%;
+  /* grid-template-rows: 4% 96%; */
+  grid-template-rows: minmax(4%, 96%), (6%, 94%);
 }
 
 .list {
@@ -40,4 +41,8 @@
 
 .list-item:hover {
   background: #ddd;
+}
+
+.selected {
+  background-color: #c2e7ff;
 }

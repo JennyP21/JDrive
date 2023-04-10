@@ -8,9 +8,6 @@
   position: sticky;
 }
 
-.selected {
-  background-color: #c2e7ff;
-}
 
 .file-list-row {
   border-bottom: 1px solid #ccc;
@@ -23,6 +20,13 @@
   align-items: center;
   color: #333;
   font-weight: 500;
+}
+
+@media only screen and (min-width: 1270px) and (max-width: 1605px) {
+  .file-list-header .file-list-row,
+.file-list-body .file-list-row {
+  grid-template-columns: 40% 20% 10% 10% 20%;
+}
 }
 
 .file-list-header .file-list-row {

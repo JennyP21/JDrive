@@ -64,6 +64,6 @@
   transform: translateY(3px) rotate(90deg);
 }
 
-.shared .leftpanel-icon {
+.non-expandable {
   margin-left: 1rem;
 }

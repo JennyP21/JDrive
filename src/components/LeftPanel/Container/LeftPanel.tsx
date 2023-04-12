@@ -1,57 +1,38 @@
-import { FaGoogleDrive, FaRegTrashAlt } from "react-icons/fa";
-import { RxTriangleRight } from "react-icons/rx";
-import { MdComputer, MdOutlinePeopleAlt, MdHistory } from "react-icons/md";
-import { AiOutlineStar, AiOutlineCloud } from "react-icons/ai";
 import "./leftPanel.css";
+import GetIcon from "../../common/Icons/GetIcon";
 
-const LeftPanel = () => {
-  const iconSize = 20;
+export interface LeftPanelProps {
+  id: number;
+  iconType: string;
+  itemText: string;
+  expandable: boolean;
+  selected: boolean;
+}
 
-  const handleExpand = (event: React.MouseEvent) => {
-    const targetElement = event.target as HTMLUnknownElement;
+interface Props {
+  leftPanelItems: LeftPanelProps[];
+  onSelect: (selectedItem: LeftPanelProps) => void;
+  iconSize: number;
+}
+
+const LeftPanel = ({leftPanelItems, onSelect, iconSize}: Props) => {
+
+  const handleExpand = (target: EventTarget) => {
+    const targetElement = target as HTMLUnknownElement;
     targetElement.classList.toggle("open");
-    console.log(targetElement);
+    console.log(leftPanelItems);
   };
 
   return (
     <div className="leftpanel">
       <button className="leftpanel-button">+ New</button>
-      <div className="leftpanel-item my-drive selected">
-        <RxTriangleRight
-          className="expandable-arrow"
-          onClick={(event) => handleExpand(event)}
-        />
-        <FaGoogleDrive size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">My Drive</span>
+      {leftPanelItems.map(({id, iconType, itemText, expandable, selected}) => (
+      <div className={selected ? "leftpanel-item my-drive selected" : "leftpanel-item my-drive"} key={id} onClick={() => onSelect({id, iconType, itemText, expandable, selected})}>
+        {expandable && <GetIcon className="expandable-arrow" iconType="triangleRight" onClick={(event) => handleExpand(event?.target as EventTarget)} />}
+        <GetIcon className={expandable ? "leftpanel-icon" : "leftpanel-icon non-expandable"} iconType={iconType} iconSize={iconSize} />
+        <span className="leftpanel-text">{itemText}</span>
       </div>
-      <div className="leftpanel-item computers">
-        <RxTriangleRight
-          className="expandable-arrow"
-          onClick={(event) => handleExpand(event)}
-        />
-        <MdComputer size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Computers</span>
-      </div>
-      <div className="leftpanel-item shared">
-        <MdOutlinePeopleAlt size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Shared with me</span>
-      </div>
-      <div className="leftpanel-item shared">
-        <MdHistory size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Recent</span>
-      </div>
-      <div className="leftpanel-item shared">
-        <AiOutlineStar size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Starred</span>
-      </div>
-      <div className="leftpanel-item shared">
-        <FaRegTrashAlt size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Trash</span>
-      </div>
-      <div className="leftpanel-item shared">
-        <AiOutlineCloud size={iconSize} className="leftpanel-icon" />
-        <span className="leftpanel-text">Storage</span>
-      </div>
+      ))}
     </div>
   );
 };

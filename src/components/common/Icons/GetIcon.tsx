@@ -10,6 +10,7 @@ import {
   AiOutlineUserAdd,
   AiOutlineStar,
   AiFillStar,
+  AiOutlineCloud
 } from "react-icons/ai";
 import { FcDocument, FcGoogle, FcContacts } from "react-icons/fc";
 import {
@@ -33,13 +34,13 @@ import {
   BiDotsVerticalRounded,
 } from "react-icons/bi";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
-import { FaYoutube, FaGooglePlay, FaGoogleDrive } from "react-icons/fa";
+import { FaYoutube, FaGooglePlay, FaGoogleDrive, FaRegTrashAlt } from "react-icons/fa";
 import { CiShoppingTag } from "react-icons/ci";
-import { MdLogout } from "react-icons/md";
-import { RxTriangleDown } from "react-icons/rx";
+import { MdLogout, MdComputer, MdOutlinePeopleAlt } from "react-icons/md";
+import { RxTriangleDown, RxTriangleRight } from "react-icons/rx";
 
 interface IconProps {
-  onClick?: () => void;
+  onClick?: (event?: MouseEvent) => void;
   iconType:
     | string
     | "options"
@@ -79,8 +80,13 @@ interface IconProps {
     | "starEmpty"
     | "starFilled"
     | "dotsVirtical"
-    | "triangleDown";
-  iconSize: number;
+    | "triangleDown"
+    | "triangleRight"
+    | "cloud"
+    | "trash"
+    | "computer"
+    | "share";
+  iconSize?: number;
   className: string;
   color?: string;
 }
@@ -127,6 +133,11 @@ const GetIcon = (
     starFilled: AiFillStar,
     dotsVirtical: BiDotsVerticalRounded,
     triangleDown: RxTriangleDown,
+    triangleRight: RxTriangleRight,
+    cloud: AiOutlineCloud,
+    trash: FaRegTrashAlt,
+    computer: MdComputer,
+    share: MdOutlinePeopleAlt
   };
 
   const Icon = iconMapping[iconType];
@@ -135,7 +146,7 @@ const GetIcon = (
       className={className}
       size={iconSize}
       color={color}
-      onClick={onClick}
+      onClick={() => onClick}
     />
   );
 };

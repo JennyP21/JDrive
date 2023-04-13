@@ -40,7 +40,7 @@ import { MdLogout, MdComputer, MdOutlinePeopleAlt, MdDriveFolderUpload, MdOutlin
 import { RxTriangleDown, RxTriangleRight } from "react-icons/rx";
 
 interface IconProps {
-  onClick?: (event?: MouseEvent) => void;
+  onClick?: () => void;
   iconType:
     | string
     | "options"
@@ -95,7 +95,6 @@ interface IconProps {
 }
 const GetIcon = (
   { iconType, iconSize, onClick, className, color }: IconProps,
-  IconType: typeof IoMdOptions
 ) => {
   const iconMapping: { [key: string]: IconType } = {
     options: IoMdOptions,
@@ -152,7 +151,7 @@ const GetIcon = (
       className={className}
       size={iconSize}
       color={color}
-      onClick={() => onClick}
+      onClick={onClick}
     />
   );
 };

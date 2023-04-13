@@ -1,9 +1,10 @@
+import { FolderListProps } from "../../common/DropDown/Content/FolderList/FolderList";
 import DashboardHeader from "../Content/Dashboard Header/DashboardHeader";
 import MyDrive from "../Content/My Drive/MyDrive";
 import "./dashboard.css";
 
 interface Props {
-  items: string[];
+  items: FolderListProps[];
 }
 
 const Dashboard = ({ items }: Props) => {

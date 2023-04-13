@@ -1,11 +1,11 @@
 import { useState } from "react";
 import GetIcon from "../../../Icons/GetIcon";
-import FolderList from "../../Content/FolderList/FolderList";
+import FolderList, { FolderListProps } from "../../Content/FolderList/FolderList";
 import "./folderDropDown.css";
 
 interface Props {
   className: string;
-  items: string[];
+  items: FolderListProps[];
   folderName: string;
 }
 

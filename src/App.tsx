@@ -5,7 +5,20 @@ import Dashboard from "./components/Dashboard/Container/Dashboard";
 import { useState } from "react";
 
 const App = () => {
-  const items = ["New File", "File Upload", "Folder Upload"];
+  const items = [
+    {
+      iconType: "newFolder",
+      text:"New Folder"
+    },
+    {
+      iconType: "fileUpload",
+      text:"File Upload"
+    },
+    {
+      iconType: "folderUpload",
+      text:"Folder Upload"
+    }
+  ];
 
   const [leftPanelItems, setLeftPanelItems] = useState([
     {id: 1, iconType: "drive", itemText: "My Drive", expandable: true, selected: true},

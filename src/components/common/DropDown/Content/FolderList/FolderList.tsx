@@ -1,8 +1,14 @@
 import { useEffect, useRef } from "react";
 import "./folderList.css";
+import GetIcon from "../../../Icons/GetIcon";
+
+export interface FolderListProps {
+  iconType: string;
+  text: string;
+}
 
 interface Props {
-  items: string[];
+  items: FolderListProps[];
   listVisible: boolean;
 }
 
@@ -16,10 +22,11 @@ const FolderList = ({ items, listVisible }: Props) => {
   }, [listVisible]);
 
   return (
-    <ul ref={listRef} className="folderList list-hidden">
-      {items.map((item) => (
-        <li className="list-item" key={item}>
-          {item}
+    <ul ref={listRef} className="folder-list list-hidden">
+      {items.map(({iconType, text}) => (
+        <li className="list-item" key={text}>
+          <GetIcon className="folder-list-icon" iconType={iconType} iconSize={25} />
+          {text}
         </li>
       ))}
     </ul>

@@ -26,7 +26,7 @@ import {
   SiGoogleads,
 } from "react-icons/si";
 import { IoMdOptions } from "react-icons/io";
-import { BsFileEarmarkSlides, BsSearch } from "react-icons/bs";
+import { BsFileEarmarkSlides, BsSearch, BsFileEarmarkArrowUp } from "react-icons/bs";
 import {
   BiHistory,
   BiDownload,
@@ -36,7 +36,7 @@ import {
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaYoutube, FaGooglePlay, FaGoogleDrive, FaRegTrashAlt } from "react-icons/fa";
 import { CiShoppingTag } from "react-icons/ci";
-import { MdLogout, MdComputer, MdOutlinePeopleAlt } from "react-icons/md";
+import { MdLogout, MdComputer, MdOutlinePeopleAlt, MdDriveFolderUpload, MdOutlineCreateNewFolder } from "react-icons/md";
 import { RxTriangleDown, RxTriangleRight } from "react-icons/rx";
 
 interface IconProps {
@@ -85,7 +85,10 @@ interface IconProps {
     | "cloud"
     | "trash"
     | "computer"
-    | "share";
+    | "share"
+    | "fileUpload"
+    | "folderUpload"
+    | "newFolder";
   iconSize?: number;
   className: string;
   color?: string;
@@ -137,7 +140,10 @@ const GetIcon = (
     cloud: AiOutlineCloud,
     trash: FaRegTrashAlt,
     computer: MdComputer,
-    share: MdOutlinePeopleAlt
+    share: MdOutlinePeopleAlt,
+    fileUpload: BsFileEarmarkArrowUp,
+    folderUpload: MdDriveFolderUpload,
+    newFolder: MdOutlineCreateNewFolder
   };
 
   const Icon = iconMapping[iconType];

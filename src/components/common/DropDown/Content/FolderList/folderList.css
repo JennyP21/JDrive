@@ -1,8 +1,14 @@
-.folderList {
-  width: 18rem;
+.folder-list {
+  width: 25rem;
   list-style: none;
   position: absolute;
   z-index: 1;
   top: 2rem;
   left: -0.5rem;
+}
+
+.folder-list .list-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 12% 88%;
 }

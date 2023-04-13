@@ -4,9 +4,10 @@ import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineViewList } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
 import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
+import { FolderListProps } from "../../../common/DropDown/Content/FolderList/FolderList";
 
 interface Props {
-  items: string[];
+  items: FolderListProps[];
 }
 
 const DashboardHeader = ({ items }: Props) => {

@@ -4,7 +4,7 @@ import MyDrive from "../Content/My Drive/MyDrive";
 import "./dashboard.css";
 
 interface Props {
-  items: FolderListProps[];
+  items: FolderListProps[][];
 }
 
 const Dashboard = ({ items }: Props) => {

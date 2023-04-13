@@ -7,7 +7,7 @@ import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/Fol
 import { FolderListProps } from "../../../common/DropDown/Content/FolderList/FolderList";
 
 interface Props {
-  items: FolderListProps[];
+  items: FolderListProps[][];
 }
 
 const DashboardHeader = ({ items }: Props) => {

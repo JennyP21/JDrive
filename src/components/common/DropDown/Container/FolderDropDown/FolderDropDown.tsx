@@ -5,7 +5,7 @@ import "./folderDropDown.css";
 
 interface Props {
   className: string;
-  items: FolderListProps[];
+  items: FolderListProps[][];
   folderName: string;
 }
 

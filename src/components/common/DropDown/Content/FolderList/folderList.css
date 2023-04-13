@@ -1,5 +1,5 @@
 .folder-list {
-  width: 25rem;
+  width: 20rem;
   list-style: none;
   position: absolute;
   z-index: 1;
@@ -7,8 +7,22 @@
   left: -0.5rem;
 }
 
+.folder-list-container:last-child .folder-list-divider {
+  display: none;
+}
+
+.folder-list-divider {
+  height: 1px;
+  background-color: #ddd;
+  border: none;
+}
+
 .folder-list .list-item {
   display: grid;
   align-items: center;
   grid-template-columns: 12% 88%;
+}
+
+.folder-list-text {
+  color: #666;
 }

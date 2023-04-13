@@ -8,7 +8,7 @@ export interface FolderListProps {
 }
 
 interface Props {
-  items: FolderListProps[];
+  items: FolderListProps[][];
   listVisible: boolean;
 }
 
@@ -23,12 +23,21 @@ const FolderList = ({ items, listVisible }: Props) => {
 
   return (
     <ul ref={listRef} className="folder-list list-hidden">
-      {items.map(({iconType, text}) => (
-        <li className="list-item" key={text}>
-          <GetIcon className="folder-list-icon" iconType={iconType} iconSize={25} />
-          {text}
-        </li>
-      ))}
+      {items.map((item) =>
+        <div className="folder-list-container">
+        {item.map((fileList) => (
+          <li className="list-item" key={fileList.text}>
+            <GetIcon
+              className="folder-list-icon"
+              iconType={fileList.iconType}
+              iconSize={25}
+            />
+            <span className="folder-list-text">{fileList.text}</span>
+          </li>
+        ))}
+          <hr className="folder-list-divider" />
+        </div>
+      )}
     </ul>
   );
 };

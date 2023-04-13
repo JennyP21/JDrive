@@ -24,9 +24,9 @@ const FolderList = ({ items, listVisible }: Props) => {
   return (
     <ul ref={listRef} className="folder-list list-hidden">
       {items.map((item) =>
-        <div className="folder-list-container">
+        <div className="folder-list-container" key={item[0].iconType}>
         {item.map((fileList) => (
-          <li className="list-item" key={fileList.text}>
+          <li className="list-item" key={fileList.iconType}>
             <GetIcon
               className="folder-list-icon"
               iconType={fileList.iconType}

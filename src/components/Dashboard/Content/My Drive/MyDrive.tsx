@@ -1,5 +1,5 @@
 import FileTable from "./FileTable/FileTable";
-import Suggestions from "./Suggestions/Suggestions";
+import Suggestions from "../../../common/Suggestions/Suggestions";
 import "./myDrive.css";
 
 const MyDrive = () => {

@@ -1,5 +1,5 @@
 import "./suggestions.css";
-import GetIcon from "../../../../common/Icons/GetIcon";
+import GetIcon from "../Icons/GetIcon";
 import { useEffect, useRef, useState } from "react";
 
 interface SuggestionsProps {

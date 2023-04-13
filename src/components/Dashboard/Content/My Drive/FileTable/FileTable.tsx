@@ -73,17 +73,16 @@ const FileTable = ({ files }: Props) => {
   };
 
   const handleFileRowClick = (target: EventTarget) => {
-    let parentElement = target as HTMLElement | null;
+    let targetElement = target as HTMLElement;
 
-    if (parentElement?.querySelector(".options-visible") === null) {
-      parentElement = parentElement.closest(".file-list-row");
+    const parentElement = targetElement.closest(".file-list-row");
+
+    if (targetElement?.classList[0] !== "name-datacell-checkbox") {
+      const checkbox = parentElement?.querySelector(
+        ".name-datacell-checkbox"
+      ) as HTMLInputElement;
+      checkbox.checked = !checkbox.checked;
     }
-
-    const checkbox = parentElement?.querySelector(
-      ".name-datacell-checkbox"
-    ) as HTMLInputElement;
-
-    checkbox.checked = !checkbox.checked;
     parentElement?.classList.toggle("selected");
   };
 

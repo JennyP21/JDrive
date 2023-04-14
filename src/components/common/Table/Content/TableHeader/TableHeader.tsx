@@ -1,15 +1,22 @@
+import { FileTitles } from "../../Container/Table";
 import "./tableHeader.css";
 
-const TableHeader = () => {
+interface Props {
+  titles: FileTitles[];
+}
+
+const TableHeader = ({ titles }: Props) => {
   return (
-    <div className="file-list-header">
-      <div className="file-list-row">
-        <span className="name-headcell">Name</span>
-        <span className="owner-headcell">Owner</span>
-        <span className="last-modified-headcell">Last modified</span>
-        <span className="file-size-headcell">File size</span>
-        <span className="options-headcell"></span>
-      </div>
+    <div className="table-header">
+      {titles.map(({ Name, Owner, LastModified, FileSize, Menu }) => (
+        <div className="table-row">
+          <span className="name-headcell"></span>
+          <span className="owner-headcell"></span>
+          <span className="last-modified-headcell"></span>
+          <span className="file-size-headcell"></span>
+          <span className="options-headcell"></span>
+        </div>
+      ))}
     </div>
   );
 };

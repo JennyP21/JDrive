@@ -1,0 +1,89 @@
+.table {
+    font-size: 0.875rem;
+    width: 100%;
+    margin: 1rem 0 0 0.5rem;
+}
+
+.table-header {
+position: sticky;
+}
+
+
+.table-row {
+border-bottom: 1px solid #ccc;
+}
+
+.table-header .table-row,
+.table-body .table-row {
+display: grid;
+grid-template-columns: 50% 20% 8% 8% 14%;
+align-items: center;
+color: #333;
+font-weight: 500;
+}
+
+@media only screen and (min-width: 1270px) and (max-width: 1605px) {
+    .table-header .table-row,
+    .table-body .table-row {
+        grid-template-columns: 40% 20% 10% 10% 20%;
+    }
+}
+
+.table-header .table-row {
+padding-bottom: 0.5rem;
+}
+
+.table-body .table-row {
+color: #555;
+font-weight: 400;
+}
+
+.table-body .table-row:hover {
+background-color: #eee;
+}
+
+.table-body .table-row span {
+padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.name-datacell {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-left: 1rem;
+}
+
+.options-datacell {
+display: flex;
+justify-content: end;
+}
+
+.options-datacell-icon {
+padding: 0.3rem;
+border-radius: 25px;
+}
+
+.options-datacell-icon:hover {
+background-color: #ddd;
+}
+
+.name-datacell-checkbox {
+width: 18px;
+height: 18px;
+}
+
+.name-datacell-checkbox:hover {
+background-color: #ddd;
+}
+
+.options-visible {
+display: block;
+}
+
+.options-hidden {
+display: none;
+}
+
+.hidden {
+display: none;
+}

@@ -1,6 +1,7 @@
 import GetIcon from "../../../Icons/GetIcon";
 import { File } from "../../Container/Table";
 import "./tableBody.css";
+import TableHiddenOptions from "./TableHiddenOptions";
 
 interface Props {
   files: File[];
@@ -79,10 +80,10 @@ const TableBody = ({ files }: Props) => {
   };
 
   return (
-    <div className="file-list-body">
+    <div className="table-body">
       {files.map(({ fileName, fileType, fileSize, lastModified, owner }) => (
         <div
-          className="file-list-row"
+          className="table-row"
           key={fileName}
           onMouseEnter={(e) => {
             showOptions(e.target);
@@ -109,34 +110,17 @@ const TableBody = ({ files }: Props) => {
             />
             <span className="name-datacell-text">{fileName}</span>
           </span>
+
           <span className="owner-datacell">{owner}</span>
+
           <span className="last-modified-datacell">
             {lastModified.toString()}
           </span>
+
           <span className="file-size-datacell">{fileSize}</span>
+
           <span className="options-datacell">
-            <div className="options-hidden">
-              <GetIcon
-                className="options-datacell-icon"
-                iconType="addUser"
-                iconSize={20}
-              />
-              <GetIcon
-                className="options-datacell-icon"
-                iconType="download"
-                iconSize={20}
-              />
-              <GetIcon
-                className="options-datacell-icon"
-                iconType="edit"
-                iconSize={20}
-              />
-              <GetIcon
-                className="options-datacell-icon"
-                iconType="starEmpty"
-                iconSize={20}
-              />
-            </div>
+            <TableHiddenOptions />
             <GetIcon
               className="options-datacell-icon"
               iconType="dotsVirtical"

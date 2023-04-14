@@ -8,16 +8,33 @@ export interface File {
   owner: string;
   lastModified: string;
   fileSize: string;
+  SharedBy: string;
+  ShareDate: string;
+  TrashedDate: string;
+  Location: string;
+}
+
+export interface FileTitles {
+  Name: string;
+  Owner: string;
+  LastModified: string;
+  FileSize: string;
+  SharedBy: string;
+  ShareDate: string;
+  Location: string;
+  TrashedDate: string;
+  Menu: boolean;
 }
 
 interface Props {
   files: File[];
+  titles: FileTitles[];
 }
 
-const Table = ({ files }: Props) => {
+const Table = ({ files, titles }: Props) => {
   return (
     <div className="table">
-      <TableHeader />
+      <TableHeader titles={titles} />
       <TableBody files={files} />
     </div>
   );

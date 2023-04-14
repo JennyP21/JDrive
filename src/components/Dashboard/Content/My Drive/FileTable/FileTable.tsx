@@ -119,7 +119,6 @@ const FileTable = ({ files }: Props) => {
                 className="name-datacell-icon"
                 iconType={fileType}
                 iconSize={25}
-                onClick={() => null}
               />
               <input
                 type="checkbox"

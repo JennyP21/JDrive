@@ -18,9 +18,8 @@ interface Props {
 const LeftPanel = ({leftPanelItems, onSelect, iconSize}: Props) => {
 
   const handleExpand = (target: EventTarget) => {
-    const targetElement = target as HTMLUnknownElement;
-    targetElement.classList.toggle("open");
-    console.log(leftPanelItems);
+    const targetElement = (target as HTMLUnknownElement);
+    targetElement?.classList.toggle("open");
   };
 
   return (
@@ -28,7 +27,9 @@ const LeftPanel = ({leftPanelItems, onSelect, iconSize}: Props) => {
       <button className="leftpanel-button">+ New</button>
       {leftPanelItems.map(({id, iconType, itemText, expandable, selected}) => (
       <div className={selected ? "leftpanel-item my-drive selected" : "leftpanel-item my-drive"} key={id} onClick={() => onSelect({id, iconType, itemText, expandable, selected})}>
-        {expandable && <GetIcon className="expandable-arrow" iconType="triangleRight" onClick={(event) => handleExpand(event?.target as EventTarget)} />}
+        {expandable && <span onClick={(event) => handleExpand(event.target)}>
+          <GetIcon className="expandable-arrow" iconType="triangleRight" />
+        </span>}
         <GetIcon className={expandable ? "leftpanel-icon" : "leftpanel-icon non-expandable"} iconType={iconType} iconSize={iconSize} />
         <span className="leftpanel-text">{itemText}</span>
       </div>

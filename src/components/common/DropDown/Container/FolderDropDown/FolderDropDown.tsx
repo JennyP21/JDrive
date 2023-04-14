@@ -18,12 +18,11 @@ const FolderDropDow = ({ items, folderName, className }: Props) => {
         className={className}
         onClick={() => setItemVisibility(!itemVisibility)}
       >
-        <span>{folderName}</span>
+        <span className="dashboard-title">{folderName}</span>
         <GetIcon
           className=""
           iconSize={18}
           iconType="triangleDown"
-          onClick={() => null}
         />
       </div>
       <FolderList listVisible={itemVisibility} items={items} />

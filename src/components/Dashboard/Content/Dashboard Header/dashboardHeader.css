@@ -8,7 +8,6 @@
 }
 
 .filepath-name {
-  color: #444;
   cursor: pointer;
   width: fit-content;
   padding: 0.3rem 0.7rem;
@@ -18,7 +17,15 @@
   transform: translateX(-0.7rem);
 }
 
-.filepath-name span {
+.dashboard-title-container {
+  align-self: center;
+  margin: 0.5rem;
+  margin-left: 0;
+  padding: 0.3rem 0;
+}
+
+.dashboard-title {
+  color: #444;
   margin: 0.3rem;
   margin-left: 0;
   font-size: 1.5rem;

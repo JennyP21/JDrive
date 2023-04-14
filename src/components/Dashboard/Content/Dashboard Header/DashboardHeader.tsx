@@ -11,18 +11,24 @@ interface Props {
   currentDashboard: string;
 }
 
-const DashboardHeader = ({ items,currentDashboard }: Props) => {
+const DashboardHeader = ({ items, currentDashboard }: Props) => {
   const [gridLayout, setGridLayout] = useState(true);
 
   return (
     <div className="dashboard-header">
-      <div className="dashboard-filepath">
-        <FolderDropDow
-          folderName={currentDashboard}
-          className="filepath-name"
-          items={items}
-        />
-      </div>
+      {currentDashboard === "My Drive" ? (
+        <div className="dashboard-filepath">
+          <FolderDropDow
+            folderName={currentDashboard}
+            className="filepath-name"
+            items={items}
+          />
+        </div>
+      ) : (
+        <div className="dashboard-title-container">
+          <span className="dashboard-title">{currentDashboard}</span>
+        </div>
+      )}
       <div className="dashboard-settings">
         <div
           className="dashboard-data-layout"

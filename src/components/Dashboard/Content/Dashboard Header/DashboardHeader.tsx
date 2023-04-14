@@ -8,16 +8,17 @@ import { FolderListProps } from "../../../common/DropDown/Content/FolderList/Fol
 
 interface Props {
   items: FolderListProps[][];
+  currentDashboard: string;
 }
 
-const DashboardHeader = ({ items }: Props) => {
+const DashboardHeader = ({ items,currentDashboard }: Props) => {
   const [gridLayout, setGridLayout] = useState(true);
 
   return (
     <div className="dashboard-header">
       <div className="dashboard-filepath">
         <FolderDropDow
-          folderName="My Drive"
+          folderName={currentDashboard}
           className="filepath-name"
           items={items}
         />

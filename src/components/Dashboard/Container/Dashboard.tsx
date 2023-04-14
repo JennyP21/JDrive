@@ -10,11 +10,18 @@ interface Props {
 }
 
 const Dashboard = ({ items, currentDashboard }: Props) => {
+  type ContentType = typeof MyDrive;
+  const contentMapping: {[key: string]: ContentType} = {
+    "My Drive": MyDrive,
+    "Shared with me": Shared,
+  }
+
+  const Content = contentMapping[currentDashboard];
+
   return (
     <div className="dashboard">
-      <DashboardHeader items={items} />
-      {currentDashboard === "My Drive" ? <MyDrive /> :
-      <Shared />}
+      <DashboardHeader currentDashboard={currentDashboard} items={items} />
+      <Content />
     </div>
   );
 };

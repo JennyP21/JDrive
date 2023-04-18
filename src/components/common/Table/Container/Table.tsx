@@ -5,30 +5,18 @@ import "./table.css";
 export interface File {
   fileType: string;
   fileName: string;
-  owner: string;
-  lastModified: string;
-  fileSize: string;
-  SharedBy: string;
-  ShareDate: string;
-  TrashedDate: string;
-  Location: string;
-}
-
-export interface FileTitles {
-  Name: string;
-  Owner: string;
-  LastModified: string;
-  FileSize: string;
-  SharedBy: string;
-  ShareDate: string;
-  Location: string;
-  TrashedDate: string;
-  Menu: boolean;
+  owner?: string;
+  lastModified?: string;
+  fileSize?: string;
+  SharedBy?: string;
+  ShareDate?: string;
+  TrashedDate?: string;
+  Location?: string;
 }
 
 interface Props {
   files: File[];
-  titles: FileTitles[];
+  titles: string[];
 }
 
 const Table = ({ files, titles }: Props) => {

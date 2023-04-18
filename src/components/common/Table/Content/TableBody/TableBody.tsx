@@ -114,7 +114,7 @@ const TableBody = ({ files }: Props) => {
           <span className="owner-datacell">{owner}</span>
 
           <span className="last-modified-datacell">
-            {lastModified.toString()}
+            {lastModified?.toString()}
           </span>
 
           <span className="file-size-datacell">{fileSize}</span>

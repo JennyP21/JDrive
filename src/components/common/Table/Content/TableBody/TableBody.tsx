@@ -36,7 +36,7 @@ const TableBody = ({ files, currentFileTable }: Props) => {
     if (parentElement?.querySelector(".options-visible") === null) {
       parentElement = parentElement.closest(".file-list-row");
     }
-
+    // Show the hidden options on hover
     let hideOptions = parentElement?.querySelector(".options-visible");
     hideOptions?.classList.remove("options-visible");
     hideOptions?.classList.add("options-hidden");
@@ -44,10 +44,6 @@ const TableBody = ({ files, currentFileTable }: Props) => {
 
   const showCheckBox = (target: EventTarget) => {
     let parentElement = target as HTMLElement | null;
-
-    if (parentElement?.querySelector(".options-visible") === null) {
-      parentElement = parentElement.closest(".file-list-row");
-    }
     let replaceFileTypeIcon = parentElement?.querySelector(".name-datacell");
     replaceFileTypeIcon?.children[0]?.classList.add("hidden");
     replaceFileTypeIcon?.children[1]?.classList.remove("hidden");
@@ -55,10 +51,6 @@ const TableBody = ({ files, currentFileTable }: Props) => {
 
   const hideCheckBox = (target: EventTarget) => {
     let parentElement = target as HTMLElement | null;
-
-    if (parentElement?.querySelector(".options-visible") === null) {
-      parentElement = parentElement.closest(".file-list-row");
-    }
 
     const checkbox = parentElement?.querySelector(
       ".name-datacell-checkbox"
@@ -71,29 +63,33 @@ const TableBody = ({ files, currentFileTable }: Props) => {
     }
   };
 
-  const handleFileRowClick = (target: EventTarget) => {
-    let targetElement = target as HTMLElement;
+  const handleFileRowClick = (
+    currentTarget: EventTarget,
+    target: EventTarget
+  ) => {
+    let targetElement = currentTarget as HTMLElement;
 
-    const parentElement = targetElement.closest(".file-list-row");
-
-    if (targetElement?.classList[0] !== "name-datacell-checkbox") {
-      const checkbox = parentElement?.querySelector(
+    if ((target as HTMLElement)?.classList[0] !== "name-datacell-checkbox") {
+      const checkbox = targetElement?.querySelector(
         ".name-datacell-checkbox"
       ) as HTMLInputElement;
       checkbox.checked = !checkbox.checked;
     }
-    parentElement?.classList.toggle("selected");
+
+    targetElement?.classList.toggle("selected");
   };
 
   return (
-    <Content
-      showOptions={showOptions}
-      hideOptions={hideOptions}
-      showCheckBox={showCheckBox}
-      hideCheckBox={hideCheckBox}
-      handleFileRowClick={handleFileRowClick}
-      files={files}
-    />
+    <div>
+      <Content
+        showOptions={showOptions}
+        hideOptions={hideOptions}
+        showCheckBox={showCheckBox}
+        hideCheckBox={hideCheckBox}
+        handleFileRowClick={handleFileRowClick}
+        files={files}
+      />
+    </div>
   );
 };
 

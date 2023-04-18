@@ -8,7 +8,7 @@ interface Props {
   showCheckBox: (target: EventTarget) => void;
   hideOptions: (target: EventTarget) => void;
   hideCheckBox: (target: EventTarget) => void;
-  handleFileRowClick: (target: EventTarget) => void;
+  handleFileRowClick: (currentTarget: EventTarget, target: EventTarget) => void;
 }
 
 const MyDriveFiles = ({
@@ -26,18 +26,15 @@ const MyDriveFiles = ({
           className="table-row"
           key={fileName}
           onMouseEnter={(e) => {
-            e.preventDefault();
-            showOptions(e.target);
-            showCheckBox(e.target);
+            showOptions(e.currentTarget);
+            showCheckBox(e.currentTarget);
           }}
           onMouseLeave={(e) => {
-            e.preventDefault();
-            hideOptions(e.target);
-            hideCheckBox(e.target);
+            hideOptions(e.currentTarget);
+            hideCheckBox(e.currentTarget);
           }}
           onClick={(e) => {
-            e.preventDefault();
-            handleFileRowClick(e.target);
+            handleFileRowClick(e.currentTarget, e.target);
           }}
         >
           <span className="name-datacell">

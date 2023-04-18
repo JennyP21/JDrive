@@ -1,8 +1,9 @@
-import FileTable from "./FileTable/FileTable";
 import Suggestions from "../../../common/Suggestions/Suggestions";
 import "./myDrive.css";
+import Table from "../../../common/Table/Container/Table";
 
 const MyDrive = () => {
+  const fileTitle = ["Name", "Owner", "Last Modified", "Size"];
   const files = [
     {
       fileName: "Shared Files",
@@ -48,7 +49,11 @@ const MyDrive = () => {
   return (
     <div className="my-drive">
       <Suggestions suggestedFiles={suggestedFiles} />
-      <FileTable files={files} />
+      <Table
+        titles={fileTitle}
+        files={files}
+        currentFileTable="My Drive Files"
+      />
     </div>
   );
 };

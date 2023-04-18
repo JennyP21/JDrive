@@ -1,13 +1,19 @@
-import GetIcon from "../../../Icons/GetIcon";
+import MyDriveFiles from "../../../../Dashboard/Content/My Drive/MyDriveFiles";
 import { File } from "../../Container/Table";
 import "./tableBody.css";
-import TableHiddenOptions from "./TableHiddenOptions";
 
 interface Props {
   files: File[];
+  currentFileTable: string;
 }
 
-const TableBody = ({ files }: Props) => {
+const TableBody = ({ files, currentFileTable }: Props) => {
+  type ContentType = typeof MyDriveFiles;
+  const contentMapping: { [key: string]: ContentType } = {
+    "My Drive Files": MyDriveFiles,
+  };
+  const Content = contentMapping[currentFileTable];
+
   const showOptions = (target: EventTarget) => {
     let parentElement = target as HTMLElement | null;
 
@@ -30,7 +36,7 @@ const TableBody = ({ files }: Props) => {
     if (parentElement?.querySelector(".options-visible") === null) {
       parentElement = parentElement.closest(".file-list-row");
     }
-    // Show the hidden options on hover
+
     let hideOptions = parentElement?.querySelector(".options-visible");
     hideOptions?.classList.remove("options-visible");
     hideOptions?.classList.add("options-hidden");
@@ -80,56 +86,14 @@ const TableBody = ({ files }: Props) => {
   };
 
   return (
-    <div className="table-body">
-      {files.map(({ fileName, fileType, fileSize, lastModified, owner }) => (
-        <div
-          className="table-row"
-          key={fileName}
-          onMouseEnter={(e) => {
-            showOptions(e.target);
-            showCheckBox(e.target);
-          }}
-          onMouseLeave={(e) => {
-            hideOptions(e.target);
-            hideCheckBox(e.target);
-          }}
-          onClick={(e) => {
-            handleFileRowClick(e.target);
-          }}
-        >
-          <span className="name-datacell">
-            <GetIcon
-              className="name-datacell-icon"
-              iconType={fileType}
-              iconSize={25}
-            />
-            <input
-              type="checkbox"
-              className="name-datacell-checkbox hidden"
-              value={fileName}
-            />
-            <span className="name-datacell-text">{fileName}</span>
-          </span>
-
-          <span className="owner-datacell">{owner}</span>
-
-          <span className="last-modified-datacell">
-            {lastModified?.toString()}
-          </span>
-
-          <span className="file-size-datacell">{fileSize}</span>
-
-          <span className="options-datacell">
-            <TableHiddenOptions />
-            <GetIcon
-              className="options-datacell-icon"
-              iconType="dotsVirtical"
-              iconSize={20}
-            />
-          </span>
-        </div>
-      ))}
-    </div>
+    <Content
+      showOptions={showOptions}
+      hideOptions={hideOptions}
+      showCheckBox={showCheckBox}
+      hideCheckBox={hideCheckBox}
+      handleFileRowClick={handleFileRowClick}
+      files={files}
+    />
   );
 };
 

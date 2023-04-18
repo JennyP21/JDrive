@@ -17,13 +17,14 @@ export interface File {
 interface Props {
   files: File[];
   titles: string[];
+  currentFileTable: string;
 }
 
-const Table = ({ files, titles }: Props) => {
+const Table = ({ files, titles, currentFileTable }: Props) => {
   return (
     <div className="table">
       <TableHeader titles={titles} />
-      <TableBody files={files} />
+      <TableBody currentFileTable={currentFileTable} files={files} />
     </div>
   );
 };

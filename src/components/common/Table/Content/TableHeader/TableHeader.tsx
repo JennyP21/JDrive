@@ -9,7 +9,7 @@ const TableHeader = ({ titles }: Props) => {
     <div className="table-header">
       <div className="table-row">
         {titles.map((title) => (
-          <span>{title}</span>
+          <span key={title}>{title}</span>
         ))}
       </div>
     </div>

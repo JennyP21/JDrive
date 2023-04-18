@@ -1,6 +1,6 @@
 import "./suggestions.css";
 import GetIcon from "../Icons/GetIcon";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 interface SuggestionsProps {
   fileType: string;

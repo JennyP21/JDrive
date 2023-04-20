@@ -1,5 +1,5 @@
-import Help from "../Content/HelpList/Help";
-import Settings from "../Content/SettingsList/Settings";
+import Help from "../../Content/HelpList/Help";
+import Settings from "../../Content/SettingsList/Settings";
 
 interface Props {
   items: string[];

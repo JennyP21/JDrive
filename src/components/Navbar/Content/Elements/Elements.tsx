@@ -1,6 +1,6 @@
-import DropDown from "../../../common/DropDown/Container/DropDown";
-import MenuDropDown from "../../../common/DropDown/Container/MenuDropDown";
-import ProfileDropDown from "../../../common/DropDown/Container/ProfileDropDown";
+import DropDown from "../../../common/DropDown/Container/CommonDropDown/DropDown";
+import MenuDropDown from "../../../common/DropDown/Container/MenuDropDown/MenuDropDown";
+import ProfileDropDown from "../../../common/DropDown/Container/ProfileDropDown/ProfileDropDown";
 
 const Elements = () => {
   const items = [

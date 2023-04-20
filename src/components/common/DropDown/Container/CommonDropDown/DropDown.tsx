@@ -1,8 +1,7 @@
-import "./dropDown.css";
-import { useEffect, useState } from "react";
-import GetIcon from "../../Icons/GetIcon";
+import { useState } from "react";
+import GetIcon from "../../../Icons/GetIcon";
 import DropDownContent from "./DropDownContent";
-import useItemVisibility from "../../../hooks/useItemVisibility";
+import useItemVisibility from "../../../../hooks/useItemVisibility";
 
 interface Props {
   items: string[];

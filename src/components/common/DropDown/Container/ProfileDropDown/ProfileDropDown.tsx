@@ -1,8 +1,7 @@
-import "./dropDown.css";
-import { useEffect, useState } from "react";
-import GetIcon from "../../Icons/GetIcon";
-import Profile from "../Content/Profile/Profile";
-import useItemVisibility from "../../../hooks/useItemVisibility";
+import { useState } from "react";
+import GetIcon from "../../../Icons/GetIcon";
+import Profile from "../../Content/Profile/Profile";
+import useItemVisibility from "../../../../hooks/useItemVisibility";
 
 interface Props {
   iconSize: number;

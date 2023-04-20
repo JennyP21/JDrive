@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import styles from "./help.module.css";
 
 interface Props {
   items: string[];
@@ -22,9 +21,9 @@ const Help = ({ items, listVisible }: Props) => {
           {item}
         </li>
       ))}
-      <hr className={styles.hr} />
+      <hr />
       <li className="list-item">Terms and Policy</li>
-      <hr className={styles.hr} />
+      <hr />
       <li className="list-item">Send feedback to Google</li>
     </ul>
   );

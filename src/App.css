@@ -46,3 +46,22 @@
 .selected {
   background-color: #c2e7ff;
 }
+
+/* Common DropDown Styles */
+
+.dropdown {
+  position: relative;
+  float: right;
+  height: 3rem;
+}
+
+.dropdown-icon:first-child {
+  cursor: pointer;
+  display: inline-flex;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.dropdown-icon:first-child:hover {
+  background: #ddd;
+}

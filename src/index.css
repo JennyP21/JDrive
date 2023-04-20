@@ -5,3 +5,7 @@ body {
   margin: 0;
   background-color: #f7f9fc;
 }
+
+hr {
+  color: #eee;
+}

@@ -17,8 +17,8 @@ const FolderList = ({ items, listVisible }: Props) => {
 
   useEffect(() => {
     const listClasses = listRef.current.classList;
-    if (listVisible) listClasses.replace("list-hidden", "list-visible");
-    else listClasses.replace("list-visible", "list-hidden");
+    listVisible ? listClasses.replace("list-hidden", "list-visible") :
+      listClasses.replace("list-visible", "list-hidden");
   }, [listVisible]);
 
   return (

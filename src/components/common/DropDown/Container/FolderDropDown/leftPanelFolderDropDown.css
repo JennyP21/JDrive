@@ -1,0 +1,12 @@
+.leftpanel-folder-dropdown {
+  position: relative;
+}
+
+.leftpanel-folder-dropdown .folder-list {
+  width: 20rem;
+  list-style: none;
+  position: absolute;
+  z-index: 1;
+  top: 3.5rem;
+  left: 0rem;
+}

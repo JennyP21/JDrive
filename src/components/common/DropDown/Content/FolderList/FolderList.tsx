@@ -23,21 +23,21 @@ const FolderList = ({ items, listVisible }: Props) => {
 
   return (
     <ul ref={listRef} className="folder-list list-hidden">
-      {items.map((item) =>
+      {items.map((item) => (
         <div className="folder-list-container" key={item[0].iconType}>
-        {item.map((fileList) => (
-          <li className="list-item" key={fileList.iconType}>
-            <GetIcon
-              className="folder-list-icon"
-              iconType={fileList.iconType}
-              iconSize={25}
-            />
-            <span className="folder-list-text">{fileList.text}</span>
-          </li>
-        ))}
+          {item.map((fileList) => (
+            <li className="list-item" key={fileList.iconType}>
+              <GetIcon
+                className="folder-list-icon"
+                iconType={fileList.iconType}
+                iconSize={25}
+              />
+              <span className="folder-list-text">{fileList.text}</span>
+            </li>
+          ))}
           <hr className="folder-list-divider" />
         </div>
-      )}
+      ))}
     </ul>
   );
 };

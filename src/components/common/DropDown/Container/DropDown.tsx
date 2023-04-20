@@ -1,7 +1,8 @@
 import "./dropDown.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GetIcon from "../../Icons/GetIcon";
 import DropDownContent from "./DropDownContent";
+import useItemVisibility from "../../../hooks/useItemVisibility";
 
 interface Props {
   items: string[];
@@ -13,13 +14,21 @@ interface Props {
 const DropDownContainer = ({ items, iconSize, iconType, dataType }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
+  useItemVisibility({
+    itemVisibility,
+    setItemVisibility,
+    targetClassName: "dropdown-icon",
+  });
+
   return (
     <div className="dropdown">
       <GetIcon
         className="dropdown-icon"
         iconType={iconType}
         iconSize={iconSize}
-        onClick={() => setItemVisibility(!itemVisibility)}
+        onClick={() => {
+          setItemVisibility(!itemVisibility);
+        }}
       />
       <DropDownContent
         items={items}

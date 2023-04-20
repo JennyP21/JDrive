@@ -8,21 +8,22 @@ interface Props {
   iconSize: number;
   dataType: "options" | "settings" | "menu" | "help" | "profile";
   iconType: "options" | "settings" | "menu" | "help" | "profile";
+  className: string;
 }
 
-const DropDownContainer = ({ items, iconSize, iconType, dataType }: Props) => {
+const DropDownContainer = ({ items, iconSize, iconType, dataType, className }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
     itemVisibility,
     setItemVisibility,
-    targetClassName: "dropdown-icon",
+    targetClassName: className,
   });
 
   return (
     <div className="dropdown">
       <GetIcon
-        className="dropdown-icon"
+        className={"dropdown-icon " + className}
         iconType={iconType}
         iconSize={iconSize}
         onClick={() => {

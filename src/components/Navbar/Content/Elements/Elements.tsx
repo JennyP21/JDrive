@@ -34,12 +34,14 @@ const Elements = () => {
       <ProfileDropDown iconType={"profile"} iconSize={iconSize} />
       <MenuDropDown items={items} iconSize={iconSize} iconType="menu" />
       <DropDown
+        className="dropdown-settings"
         iconType={"settings"}
         items={settingsItems}
         iconSize={iconSize}
         dataType="settings"
       />
       <DropDown
+        className="dropdown-help"
         iconType={"help"}
         items={helpItems}
         iconSize={iconSize}

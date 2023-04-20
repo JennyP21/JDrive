@@ -6,24 +6,24 @@ import useItemVisibility from "../../../../hooks/useItemVisibility";
 import "./leftPanelDropDown.css";
 
 interface Props {
-    className: string;
-    items: FolderListProps[][];
+    containerClassName: string;
     contentClassName: string;
+    items: FolderListProps[][];
 }
 
-const LeftPanelFolderDropDown = ({ items, className, contentClassName }: Props) => {
+const LeftPanelFolderDropDown = ({ items, containerClassName, contentClassName }: Props) => {
     const [itemVisibility, setItemVisibility] = useState(false);
 
     useItemVisibility({
         itemVisibility,
         setItemVisibility,
-        containerClassName: className,
+        containerClassName: containerClassName,
         contentClassname: contentClassName
     });
 
     return (
         <div className="leftpanel-dropdown">
-            <div className={className}>
+            <div className={containerClassName}>
                 <button onClick={(e) => {
                     e.stopPropagation();
                     setItemVisibility(!itemVisibility)

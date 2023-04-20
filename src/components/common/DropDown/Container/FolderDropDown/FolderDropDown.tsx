@@ -3,8 +3,8 @@ import GetIcon from "../../../Icons/GetIcon";
 import FolderList, {
   FolderListProps,
 } from "../../Content/FolderList/FolderList";
-import "./folderDropDown.css";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
+import "./folderDropDown.css";
 
 interface Props {
   className: string;

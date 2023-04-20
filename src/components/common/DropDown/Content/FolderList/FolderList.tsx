@@ -10,9 +10,10 @@ export interface FolderListProps {
 interface Props {
   items: FolderListProps[][];
   listVisible: boolean;
+  contentClassName: string;
 }
 
-const FolderList = ({ items, listVisible }: Props) => {
+const FolderList = ({ items, listVisible, contentClassName }: Props) => {
   const listRef = useRef(document.createElement("ul"));
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const FolderList = ({ items, listVisible }: Props) => {
   }, [listVisible]);
 
   return (
-    <ul ref={listRef} className="folder-list list-hidden">
+    <ul ref={listRef} className={"folder-list " + contentClassName + " list-hidden"}>
       {items.map((item) => (
         <div className="folder-list-container" key={item[0].iconType}>
           {item.map((fileList) => (

@@ -26,7 +26,7 @@ const LeftPanel = ({ leftPanelItems, onSelect, iconSize, dropDownItems }: Props)
 
   return (
     <div className="leftpanel">
-      <LeftPanelFolderDropDown className="leftpanel-dropdown" items={dropDownItems} />
+      <LeftPanelFolderDropDown contentClassName="leftpanel-content" className="leftpanel-dropdown" items={dropDownItems} />
       {leftPanelItems.map(
         ({ id, iconType, itemText, expandable, selected }) => (
           <div

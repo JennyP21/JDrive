@@ -19,6 +19,7 @@ const DashboardHeader = ({ items, currentDashboard }: Props) => {
       {currentDashboard === "My Drive" ? (
         <div className="dashboard-filepath">
           <FolderDropDow
+            contentClassName="dashboard-content"
             folderName={currentDashboard}
             className="filepath-name"
             items={items}

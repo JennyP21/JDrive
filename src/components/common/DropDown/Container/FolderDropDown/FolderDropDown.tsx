@@ -8,17 +8,19 @@ import useItemVisibility from "../../../../hooks/useItemVisibility";
 
 interface Props {
   className: string;
+  contentClassName: string;
   items: FolderListProps[][];
   folderName: string;
 }
 
-const FolderDropDow = ({ items, folderName, className }: Props) => {
+const FolderDropDow = ({ items, folderName, className, contentClassName }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
     itemVisibility,
     setItemVisibility,
-    targetClassName: className,
+    containerClassName: className,
+    contentClassname: contentClassName
   });
 
   return (
@@ -34,7 +36,7 @@ const FolderDropDow = ({ items, folderName, className }: Props) => {
           iconType="triangleDown"
         />
       </div>
-      <FolderList listVisible={itemVisibility} items={items} />
+      <FolderList contentClassName={contentClassName} listVisible={itemVisibility} items={items} />
     </div>
   );
 };

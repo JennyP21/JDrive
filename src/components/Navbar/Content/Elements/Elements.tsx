@@ -39,6 +39,7 @@ const Elements = () => {
         items={settingsItems}
         iconSize={iconSize}
         dataType="settings"
+        listClassName="list-settings"
       />
       <DropDown
         className="dropdown-help"
@@ -46,6 +47,7 @@ const Elements = () => {
         items={helpItems}
         iconSize={iconSize}
         dataType="help"
+        listClassName="list-help"
       />
     </div>
   );

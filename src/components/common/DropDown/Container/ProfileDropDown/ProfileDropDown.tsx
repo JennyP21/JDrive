@@ -14,7 +14,8 @@ const DropDownContainer = ({ iconSize, iconType }: Props) => {
   useItemVisibility({
     itemVisibility,
     setItemVisibility,
-    targetClassName: "dropdown-profile",
+    containerClassName: "dropdown-profile",
+    contentClassname: "profile"
   });
 
   return (

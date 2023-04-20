@@ -8,15 +8,17 @@ import "./leftPanelFolderDropDown.css";
 interface Props {
     className: string;
     items: FolderListProps[][];
+    contentClassName: string;
 }
 
-const LeftPanelFolderDropDown = ({ items, className }: Props) => {
+const LeftPanelFolderDropDown = ({ items, className, contentClassName }: Props) => {
     const [itemVisibility, setItemVisibility] = useState(false);
 
     useItemVisibility({
         itemVisibility,
         setItemVisibility,
-        targetClassName: className,
+        containerClassName: className,
+        contentClassname: contentClassName
     });
 
     return (
@@ -27,7 +29,7 @@ const LeftPanelFolderDropDown = ({ items, className }: Props) => {
                     setItemVisibility(!itemVisibility)
                 }} className="leftpanel-button">+ New</button>
             </div>
-            <FolderList listVisible={itemVisibility} items={items} />
+            <FolderList contentClassName={contentClassName} listVisible={itemVisibility} items={items} />
         </div>
     );
 };

@@ -9,15 +9,17 @@ interface Props {
   dataType: "options" | "settings" | "menu" | "help" | "profile";
   iconType: "options" | "settings" | "menu" | "help" | "profile";
   className: string;
+  listClassName: string;
 }
 
-const DropDownContainer = ({ items, iconSize, iconType, dataType, className }: Props) => {
+const DropDownContainer = ({ items, iconSize, iconType, dataType, className, listClassName }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
     itemVisibility,
     setItemVisibility,
-    targetClassName: className,
+    containerClassName: className,
+    contentClassname: listClassName
   });
 
   return (
@@ -34,6 +36,7 @@ const DropDownContainer = ({ items, iconSize, iconType, dataType, className }: P
         items={items}
         itemVisibility={itemVisibility}
         dataType={dataType}
+        contentClassName={listClassName}
       />
     </div>
   );

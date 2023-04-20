@@ -17,10 +17,6 @@ const TableBody = ({ files, currentFileTable }: Props) => {
   const showOptions = (target: EventTarget) => {
     let parentElement = target as HTMLElement | null;
 
-    if (parentElement?.querySelector(".options-hidden") === null) {
-      parentElement = parentElement.closest(".file-list-row");
-    }
-    // Show the hidden options on hover
     let showOptions = parentElement?.querySelector(".options-hidden");
     showOptions?.classList.remove("options-hidden");
     showOptions?.classList.add("options-visible");
@@ -32,11 +28,6 @@ const TableBody = ({ files, currentFileTable }: Props) => {
 
   const hideOptions = (target: EventTarget) => {
     let parentElement = target as HTMLElement | null;
-
-    if (parentElement?.querySelector(".options-visible") === null) {
-      parentElement = parentElement.closest(".file-list-row");
-    }
-    // Show the hidden options on hover
     let hideOptions = parentElement?.querySelector(".options-visible");
     hideOptions?.classList.remove("options-visible");
     hideOptions?.classList.add("options-hidden");
@@ -50,14 +41,14 @@ const TableBody = ({ files, currentFileTable }: Props) => {
   };
 
   const hideCheckBox = (target: EventTarget) => {
-    let parentElement = target as HTMLElement | null;
+    let targetElement = target as HTMLElement | null;
 
-    const checkbox = parentElement?.querySelector(
+    const checkbox = targetElement?.querySelector(
       ".name-datacell-checkbox"
     ) as HTMLInputElement;
 
     if (!checkbox.checked) {
-      let replaceCheckbox = parentElement?.querySelector(".name-datacell");
+      let replaceCheckbox = targetElement?.querySelector(".name-datacell");
       replaceCheckbox?.children[0]?.classList.remove("hidden");
       replaceCheckbox?.children[1]?.classList.add("hidden");
     }

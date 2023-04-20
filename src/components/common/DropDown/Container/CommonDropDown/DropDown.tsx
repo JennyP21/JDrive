@@ -1,6 +1,6 @@
 import { useState } from "react";
 import GetIcon from "../../../Icons/GetIcon";
-import DropDownContent from "./DropDownContent";
+import DropDownContent from "../../Content/CommonDropDown/DropDownContent";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
 
 interface Props {

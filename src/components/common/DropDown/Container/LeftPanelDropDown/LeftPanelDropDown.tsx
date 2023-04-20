@@ -3,7 +3,7 @@ import FolderList, {
     FolderListProps,
 } from "../../Content/FolderList/FolderList";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
-import "./leftPanelFolderDropDown.css";
+import "./leftPanelDropDown.css";
 
 interface Props {
     className: string;
@@ -22,7 +22,7 @@ const LeftPanelFolderDropDown = ({ items, className, contentClassName }: Props) 
     });
 
     return (
-        <div className="leftpanel-folder-dropdown">
+        <div className="leftpanel-dropdown">
             <div className={className}>
                 <button onClick={(e) => {
                     e.stopPropagation();

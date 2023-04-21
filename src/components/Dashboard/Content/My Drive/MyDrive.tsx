@@ -1,10 +1,13 @@
 import Suggestions from "../../../common/Suggestions/Suggestions";
 import "./myDrive.css";
 import Table from "../../../common/Table/Container/Table";
+import { getFiles } from "../../../../services/fileService";
+import { useEffect, useState } from "react";
 
 const MyDrive = () => {
   const fileTitle = ["Name", "Owner", "Last Modified", "Size"];
-  const files = [
+
+  const [files, setFiles] = useState([
     {
       fileName: "Shared Files",
       fileType: "folder",
@@ -26,7 +29,12 @@ const MyDrive = () => {
       lastModified: "1 Jan 2023",
       fileSize: "-",
     },
-  ];
+  ]);
+  useEffect(() => {
+    async () => {
+      return await getFiles().then((res) => console.log(res.status));
+    }
+  }, []);
 
   const suggestedFiles = [
     {

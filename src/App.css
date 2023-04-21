@@ -5,6 +5,11 @@
   grid-template-rows: minmax(4%, 96%), (6%, 94%);
 }
 
+/* Input Type File */
+input[type="file"] {
+  display: none;
+}
+
 .list {
   position: absolute;
   left: -210px;

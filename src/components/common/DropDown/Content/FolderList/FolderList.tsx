@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import "./folderList.css";
 import GetIcon from "../../../Icons/GetIcon";
+import { uploadFile } from "../../../../../services/fileService";
 
 export interface FolderListProps {
   iconType: string;
@@ -14,8 +15,16 @@ interface Props {
 }
 
 const FolderList = ({ items, listVisible, contentClassName }: Props) => {
-  const listRef = useRef(document.createElement("ul"));
 
+  const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const file = e.target.files[0];
+      const result = await uploadFile(file);
+      console.log(result);
+    }
+  }
+
+  const listRef = useRef(document.createElement("ul"));
   useEffect(() => {
     const listClasses = listRef.current.classList;
     listVisible ? listClasses.replace("list-hidden", "list-visible") :
@@ -33,7 +42,9 @@ const FolderList = ({ items, listVisible, contentClassName }: Props) => {
                 iconType={fileList.iconType}
                 iconSize={25}
               />
-              <span className="folder-list-text">{fileList.text}</span>
+              <label htmlFor="file-upload">
+                {fileList.text}<input type="file" id="file-upload" className="folder-list-text" onChange={handleFileUpload}></input>
+              </label>
             </li>
           ))}
           <hr className="folder-list-divider" />

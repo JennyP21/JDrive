@@ -31,9 +31,10 @@ const MyDrive = () => {
     },
   ]);
   useEffect(() => {
-    async () => {
-      return await getFiles().then((res) => console.log(res.status));
+    const data = async () => {
+      return await getFiles().then(items => console.log(items));
     }
+    data();
   }, []);
 
   const suggestedFiles = [

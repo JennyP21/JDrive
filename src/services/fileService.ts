@@ -5,10 +5,10 @@ export function getFiles() {
     return http.get(`${apiUrl}/files`).then(res => res.data)
 }
 
-export function uploadFile(file: File) {
-    return http.post(`${apiUrl}/files/upload`, file, {
+export function uploadFile(formData: FormData) {
+    return http.post(`${apiUrl}/files/upload`, formData, {
         headers: {
-            'content-type': file.type,
-        },
-    }).then(res => res.data)
+            "Content-Type": "multipart/form-data"
+        }
+    }).then(res => res.data);
 }

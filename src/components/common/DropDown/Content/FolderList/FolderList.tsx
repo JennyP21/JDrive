@@ -19,7 +19,13 @@ const FolderList = ({ items, listVisible, contentClassName }: Props) => {
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const file = e.target.files[0];
-      const result = await uploadFile(file);
+      const formData = new FormData();
+      formData.append("fileName", file.name);
+      formData.append("fileSize", file.size.toString());
+      formData.append("fileType", file.type);
+      formData.append("file", file);
+
+      const result = await uploadFile(formData);
       console.log(result);
     }
   }

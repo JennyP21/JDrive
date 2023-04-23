@@ -9,6 +9,7 @@ interface Props {
   hideOptions: (target: EventTarget) => void;
   hideCheckBox: (target: EventTarget) => void;
   handleFileRowClick: (currentTarget: EventTarget, target: EventTarget) => void;
+  formatBytes: (size: string) => string;
 }
 
 const MyDriveFiles = ({
@@ -17,6 +18,7 @@ const MyDriveFiles = ({
   showCheckBox,
   hideCheckBox,
   handleFileRowClick,
+  formatBytes,
   files,
 }: Props) => {
   return (
@@ -54,10 +56,10 @@ const MyDriveFiles = ({
           <span className="owner-datacell">Jenny</span>
 
           <span className="last-modified-datacell">
-            {modified?.toString()}
+            {modified?.split("T")[0]}
           </span>
 
-          <span className="file-size-datacell">{size}</span>
+          <span className="file-size-datacell">{formatBytes(size || '')}</span>
 
           <span className="options-datacell">
             <TableHiddenOptions />

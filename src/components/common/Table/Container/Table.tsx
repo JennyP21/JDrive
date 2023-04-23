@@ -3,11 +3,13 @@ import TableHeader from "../Content/TableHeader/TableHeader";
 import "./table.css";
 
 export interface File {
-  fileType: string;
-  fileName: string;
+  id: string;
+  type: string;
+  name: string;
   owner?: string;
-  lastModified?: string;
-  fileSize?: string;
+  modified?: string;
+  created?: string;
+  size?: string;
   SharedBy?: string;
   ShareDate?: string;
   TrashedDate?: string;

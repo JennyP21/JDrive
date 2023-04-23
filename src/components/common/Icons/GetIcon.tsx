@@ -10,7 +10,8 @@ import {
   AiOutlineUserAdd,
   AiOutlineStar,
   AiFillStar,
-  AiOutlineCloud
+  AiOutlineCloud,
+  AiOutlineFileImage
 } from "react-icons/ai";
 import { FcDocument, FcGoogle, FcContacts } from "react-icons/fc";
 import {
@@ -32,6 +33,7 @@ import {
   BiDownload,
   BiEditAlt,
   BiDotsVerticalRounded,
+  BiFileBlank,
 } from "react-icons/bi";
 import { HiOutlinePresentationChartBar } from "react-icons/hi";
 import { FaYoutube, FaGooglePlay, FaGoogleDrive, FaRegTrashAlt } from "react-icons/fa";
@@ -42,53 +44,55 @@ import { RxTriangleDown, RxTriangleRight } from "react-icons/rx";
 interface IconProps {
   onClick?: () => void;
   iconType:
-    | string
-    | "options"
-    | "settings"
-    | "menu"
-    | "help"
-    | "profile"
-    | "search"
-    | "history"
-    | "pdf"
-    | "folder"
-    | "document"
-    | "sheet"
-    | "presentation"
-    | "form"
-    | "video"
-    | "close"
-    | "google"
-    | "navigation"
-    | "youtube"
-    | "googlePlay"
-    | "news"
-    | "gmail"
-    | "meet"
-    | "chat"
-    | "contacts"
-    | "drive"
-    | "calendar"
-    | "translate"
-    | "photos"
-    | "adCenter"
-    | "shopping"
-    | "addUser"
-    | "logout"
-    | "download"
-    | "edit"
-    | "starEmpty"
-    | "starFilled"
-    | "dotsVirtical"
-    | "triangleDown"
-    | "triangleRight"
-    | "cloud"
-    | "trash"
-    | "computer"
-    | "share"
-    | "fileUpload"
-    | "folderUpload"
-    | "newFolder";
+  | string
+  | "options"
+  | "settings"
+  | "menu"
+  | "help"
+  | "profile"
+  | "search"
+  | "history"
+  | "pdf"
+  | "folder"
+  | "document"
+  | "sheet"
+  | "presentation"
+  | "form"
+  | "video"
+  | "close"
+  | "google"
+  | "navigation"
+  | "youtube"
+  | "googlePlay"
+  | "news"
+  | "gmail"
+  | "meet"
+  | "chat"
+  | "contacts"
+  | "drive"
+  | "calendar"
+  | "translate"
+  | "photos"
+  | "adCenter"
+  | "shopping"
+  | "addUser"
+  | "logout"
+  | "download"
+  | "edit"
+  | "starEmpty"
+  | "starFilled"
+  | "dotsVirtical"
+  | "triangleDown"
+  | "triangleRight"
+  | "cloud"
+  | "trash"
+  | "computer"
+  | "share"
+  | "fileUpload"
+  | "folderUpload"
+  | "newFolder"
+  | "image"
+  | "unknown";
   iconSize?: number;
   className: string;
   color?: string;
@@ -142,10 +146,12 @@ const GetIcon = (
     share: MdOutlinePeopleAlt,
     fileUpload: BsFileEarmarkArrowUp,
     folderUpload: MdDriveFolderUpload,
-    newFolder: MdOutlineCreateNewFolder
+    newFolder: MdOutlineCreateNewFolder,
+    image: AiOutlineFileImage,
+    unknown: BiFileBlank
   };
 
-  const Icon = iconMapping[iconType];
+  const Icon = iconMapping[iconType] ? iconMapping[iconType] : iconMapping["unknown"];
   return (
     <Icon
       className={className}

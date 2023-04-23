@@ -21,10 +21,10 @@ const MyDriveFiles = ({
 }: Props) => {
   return (
     <div className="table-body">
-      {files.map(({ fileName, fileType, fileSize, lastModified, owner }) => (
+      {files && files.map(({ id, name, type, size, modified }) => (
         <div
           className="table-row"
-          key={fileName}
+          key={id}
           onMouseEnter={(e) => {
             showOptions(e.currentTarget);
             showCheckBox(e.currentTarget);
@@ -40,24 +40,24 @@ const MyDriveFiles = ({
           <span className="name-datacell">
             <GetIcon
               className="name-datacell-icon"
-              iconType={fileType}
+              iconType={type.split("/")[0]}
               iconSize={25}
             />
             <input
               type="checkbox"
               className="name-datacell-checkbox hidden"
-              value={fileName}
+              value={name}
             />
-            <span className="name-datacell-text">{fileName}</span>
+            <span className="name-datacell-text">{name}</span>
           </span>
 
-          <span className="owner-datacell">{owner}</span>
+          <span className="owner-datacell">Jenny</span>
 
           <span className="last-modified-datacell">
-            {lastModified?.toString()}
+            {modified?.toString()}
           </span>
 
-          <span className="file-size-datacell">{fileSize}</span>
+          <span className="file-size-datacell">{size}</span>
 
           <span className="options-datacell">
             <TableHiddenOptions />

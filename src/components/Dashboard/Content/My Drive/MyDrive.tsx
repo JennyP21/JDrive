@@ -1,38 +1,17 @@
 import Suggestions from "../../../common/Suggestions/Suggestions";
 import "./myDrive.css";
-import Table from "../../../common/Table/Container/Table";
+import Table, { File } from "../../../common/Table/Container/Table";
 import { getFiles } from "../../../../services/fileService";
 import { useEffect, useState } from "react";
 
 const MyDrive = () => {
   const fileTitle = ["Name", "Owner", "Last Modified", "Size"];
 
-  const [files, setFiles] = useState([
-    {
-      fileName: "Shared Files",
-      fileType: "folder",
-      owner: "Jenny",
-      lastModified: "18 Dec 2021",
-      fileSize: "-",
-    },
-    {
-      fileName: "Bills",
-      fileType: "pdf",
-      owner: "Jenny",
-      lastModified: "5 Nov 2022",
-      fileSize: "-",
-    },
-    {
-      fileName: "Resume",
-      fileType: "document",
-      owner: "Jenny",
-      lastModified: "1 Jan 2023",
-      fileSize: "-",
-    },
-  ]);
+  const [files, setFiles] = useState<File[]>([]);
+
   useEffect(() => {
     const data = async () => {
-      return await getFiles().then(items => console.log(items));
+      return await getFiles().then(items => setFiles(items));
     }
     data();
   }, []);

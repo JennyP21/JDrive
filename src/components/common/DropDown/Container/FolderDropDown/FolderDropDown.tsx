@@ -1,19 +1,16 @@
 import { useState } from "react";
 import GetIcon from "../../../Icons/GetIcon";
-import FolderList, {
-  FolderListProps,
-} from "../../Content/FolderList/FolderList";
+import FolderList from "../../Content/FolderList/FolderList";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
 import "./folderDropDown.css";
 
 interface Props {
   className: string;
   contentClassName: string;
-  items: FolderListProps[][];
   folderName: string;
 }
 
-const FolderDropDow = ({ items, folderName, className, contentClassName }: Props) => {
+const FolderDropDow = ({ folderName, className, contentClassName }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
@@ -36,7 +33,7 @@ const FolderDropDow = ({ items, folderName, className, contentClassName }: Props
           iconType="triangleDown"
         />
       </div>
-      <FolderList contentClassName={contentClassName} listVisible={itemVisibility} items={items} />
+      <FolderList contentClassName={contentClassName} listVisible={itemVisibility} />
     </div>
   );
 };

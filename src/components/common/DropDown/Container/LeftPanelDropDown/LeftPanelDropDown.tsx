@@ -1,17 +1,14 @@
 import { useState } from "react";
-import FolderList, {
-    FolderListProps,
-} from "../../Content/FolderList/FolderList";
+import FolderList from "../../Content/FolderList/FolderList";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
 import "./leftPanelDropDown.css";
 
 interface Props {
     containerClassName: string;
     contentClassName: string;
-    items: FolderListProps[][];
 }
 
-const LeftPanelFolderDropDown = ({ items, containerClassName, contentClassName }: Props) => {
+const LeftPanelFolderDropDown = ({ containerClassName, contentClassName }: Props) => {
     const [itemVisibility, setItemVisibility] = useState(false);
 
     useItemVisibility({
@@ -29,7 +26,7 @@ const LeftPanelFolderDropDown = ({ items, containerClassName, contentClassName }
                     setItemVisibility(!itemVisibility)
                 }} className="leftpanel-button">+ New</button>
             </div>
-            <FolderList contentClassName={contentClassName} listVisible={itemVisibility} items={items} />
+            <FolderList contentClassName={contentClassName} listVisible={itemVisibility} />
         </div>
     );
 };

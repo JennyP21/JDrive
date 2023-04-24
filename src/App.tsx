@@ -5,42 +5,6 @@ import Dashboard from "./components/Dashboard/Container/Dashboard";
 import { useState } from "react";
 
 const App = () => {
-  const items = [
-    [
-      {
-        iconType: "newFolder",
-        text: "New Folder",
-      },
-    ],
-    [
-      {
-        iconType: "fileUpload",
-        text: "File Upload",
-      },
-      {
-        iconType: "folderUpload",
-        text: "Folder Upload",
-      },
-    ],
-    [
-      {
-        iconType: "document",
-        text: "Google Docs",
-      },
-      {
-        iconType: "sheet",
-        text: "Google Sheet",
-      },
-      {
-        iconType: "presentation",
-        text: "Google Slides",
-      },
-      {
-        iconType: "form",
-        text: "Google Form",
-      },
-    ],
-  ];
 
   const [leftPanelItems, setLeftPanelItems] = useState([
     {
@@ -113,9 +77,8 @@ const App = () => {
         iconSize={18}
         onSelect={handleSelect}
         leftPanelItems={leftPanelItems}
-        dropDownItems={items}
       />
-      <Dashboard currentDashboard={currentDashboard} items={items} />
+      <Dashboard currentDashboard={currentDashboard} />
     </div>
   );
 };

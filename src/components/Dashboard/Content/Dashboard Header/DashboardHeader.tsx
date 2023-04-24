@@ -4,14 +4,13 @@ import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineViewList } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
 import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
-import { FolderListProps } from "../../../common/DropDown/Content/FolderList/FolderList";
+
 
 interface Props {
-  items: FolderListProps[][];
   currentDashboard: string;
 }
 
-const DashboardHeader = ({ items, currentDashboard }: Props) => {
+const DashboardHeader = ({ currentDashboard }: Props) => {
   const [gridLayout, setGridLayout] = useState(true);
 
   return (
@@ -22,7 +21,6 @@ const DashboardHeader = ({ items, currentDashboard }: Props) => {
             contentClassName="dashboard-content"
             folderName={currentDashboard}
             className="filepath-name"
-            items={items}
           />
         </div>
       ) : (

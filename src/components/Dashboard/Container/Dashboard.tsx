@@ -1,4 +1,3 @@
-import { FolderListProps } from "../../common/DropDown/Content/FolderList/FolderList";
 import Computers from "../Content/Computers/Computers";
 import DashboardHeader from "../Content/Dashboard Header/DashboardHeader";
 import MyDrive from "../Content/My Drive/MyDrive";
@@ -10,13 +9,12 @@ import Trash from "../Content/Trash/Trash";
 import "./dashboard.css";
 
 interface Props {
-  items: FolderListProps[][];
   currentDashboard: string;
 }
 
-const Dashboard = ({ items, currentDashboard }: Props) => {
+const Dashboard = ({ currentDashboard }: Props) => {
   type ContentType = typeof MyDrive;
-  const contentMapping: {[key: string]: ContentType} = {
+  const contentMapping: { [key: string]: ContentType } = {
     "My Drive": MyDrive,
     "Computers": Computers,
     "Shared with me": Shared,
@@ -30,7 +28,7 @@ const Dashboard = ({ items, currentDashboard }: Props) => {
 
   return (
     <div className="dashboard">
-      <DashboardHeader currentDashboard={currentDashboard} items={items} />
+      <DashboardHeader currentDashboard={currentDashboard} />
       <Content />
     </div>
   );

@@ -1,6 +1,5 @@
 import "./leftPanel.css";
 import GetIcon from "../common/Icons/GetIcon";
-import { FolderListProps } from "../common/DropDown/Content/FolderList/FolderList";
 import LeftPanelDropDown from "../common/DropDown/Container/LeftPanelDropDown/LeftPanelDropDown";
 
 export interface LeftPanelProps {
@@ -15,10 +14,9 @@ interface Props {
   leftPanelItems: LeftPanelProps[];
   onSelect: (selectedItem: LeftPanelProps) => void;
   iconSize: number;
-  dropDownItems: FolderListProps[][];
 }
 
-const LeftPanel = ({ leftPanelItems, onSelect, iconSize, dropDownItems }: Props) => {
+const LeftPanel = ({ leftPanelItems, onSelect, iconSize }: Props) => {
   const handleExpand = (target: EventTarget) => {
     const targetElement = target as HTMLUnknownElement;
     targetElement?.classList.toggle("open");
@@ -26,7 +24,7 @@ const LeftPanel = ({ leftPanelItems, onSelect, iconSize, dropDownItems }: Props)
 
   return (
     <div className="leftpanel">
-      <LeftPanelDropDown contentClassName="leftpanel-content" containerClassName="leftpanel-dropdown-container" items={dropDownItems} />
+      <LeftPanelDropDown contentClassName="leftpanel-content" containerClassName="leftpanel-dropdown-container" />
       {leftPanelItems.map(
         ({ id, iconType, itemText, expandable, selected }) => (
           <div

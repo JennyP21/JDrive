@@ -7,14 +7,16 @@ import Shared from "../Content/Shared/Shared";
 import Starred from "../Content/Starred/Starred";
 import Storage from "../Content/Storage/Storage";
 import Trash from "../Content/Trash/Trash";
+import Path from "../Content/Path/Path";
 import "./dashboard.css";
 
 interface Props {
   currentDashboard: string;
+  setCurrentDashboard: (dashboard: string) => void;
 }
 
-const Dashboard = ({ currentDashboard }: Props) => {
-  type ContentType = typeof MyDrive;
+const Dashboard = ({ currentDashboard, setCurrentDashboard }: Props) => {
+  type ContentType = typeof MyDrive | typeof Path;
   const contentMapping: { [key: string]: ContentType } = {
     "My Drive": MyDrive,
     "Computers": Computers,
@@ -23,13 +25,14 @@ const Dashboard = ({ currentDashboard }: Props) => {
     "Starred": Starred,
     "Trash": Trash,
     "Storage": Storage,
+    "Path": Path,
   }
-
-  const [currentPath, setCurrentPath] = useState(["My Drive", "Folder", "Folder", "Folder2"]);
 
   const Content = contentMapping[currentDashboard];
 
-  const handleFolderClick = (path: string, index: number) => {
+  const [currentPath, setCurrentPath] = useState(["My Drive"]);
+
+  const handleFolderClick = (index: number) => {
     const newPath = currentPath.splice(0, index + 1);
     setCurrentPath(newPath);
   };
@@ -37,7 +40,7 @@ const Dashboard = ({ currentDashboard }: Props) => {
   return (
     <div className="dashboard">
       <DashboardHeader handleFolderClick={handleFolderClick} currentPath={currentPath} currentDashboard={currentDashboard} />
-      <Content />
+      <Content currentPath={currentPath} />
     </div>
   );
 };

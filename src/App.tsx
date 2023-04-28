@@ -78,7 +78,7 @@ const App = () => {
         onSelect={handleSelect}
         leftPanelItems={leftPanelItems}
       />
-      <Dashboard currentDashboard={currentDashboard} />
+      <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} />
     </div>
   );
 };

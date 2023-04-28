@@ -11,7 +11,7 @@ import React from "react";
 interface Props {
   currentPath: string[];
   currentDashboard: string;
-  handleFolderClick: (path: string, index: number) => void;
+  handleFolderClick: (index: number) => void;
 }
 
 const DashboardHeader = ({ currentDashboard, currentPath, handleFolderClick }: Props) => {
@@ -26,7 +26,7 @@ const DashboardHeader = ({ currentDashboard, currentPath, handleFolderClick }: P
               {currentPath.length - 1 !== index ?
                 <>
                   <div className="dashboard-previous-folder">
-                    <span className="dashboard-title" onClick={() => handleFolderClick(path, index)}>{path}</span>
+                    <span className="dashboard-title" onClick={() => handleFolderClick(index)}>{path}</span>
                   </div>
                   <GetIcon className="dashboard-pathArrow" iconType="pathArrow" iconSize={18} />
                 </> :

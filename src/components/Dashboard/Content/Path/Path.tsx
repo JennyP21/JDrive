@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Table, { File } from "../../../common/Table/Container/Table"
 import "./path.css"
+import { FolderProps } from "../Dashboard Header/DashboardHeader";
 
 interface Props {
-    currentPath: string[];
+    currentPath: FolderProps[];
 }
 
 const Path = ({ currentPath }: Props) => {

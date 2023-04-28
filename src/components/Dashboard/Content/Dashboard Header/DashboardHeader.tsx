@@ -7,9 +7,13 @@ import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/Fol
 import GetIcon from "../../../common/Icons/GetIcon";
 import React from "react";
 
+export interface FolderProps {
+  id: string;
+  name: string;
+}
 
 interface Props {
-  currentPath: string[];
+  currentPath: FolderProps[];
   currentDashboard: string;
   handleFolderClick: (index: number) => void;
 }
@@ -21,18 +25,18 @@ const DashboardHeader = ({ currentDashboard, currentPath, handleFolderClick }: P
     <div className="dashboard-header">
       {currentDashboard === "My Drive" ? (
         <div className="dashboard-filepath">
-          {currentPath.map((path, index) => (
-            <React.Fragment key={path + index}>
+          {currentPath && currentPath.map(({ id, name }, index) => (
+            <React.Fragment key={id}>
               {currentPath.length - 1 !== index ?
                 <>
                   <div className="dashboard-previous-folder">
-                    <span className="dashboard-title" onClick={() => handleFolderClick(index)}>{path}</span>
+                    <span className="dashboard-title" onClick={() => handleFolderClick(index)}>{name}</span>
                   </div>
                   <GetIcon className="dashboard-pathArrow" iconType="pathArrow" iconSize={18} />
                 </> :
                 <FolderDropDow
                   contentClassName="dashboard-content"
-                  folderName={path}
+                  folderName={name}
                   className="filepath-name"
                   currentFolder={true}
                 />}

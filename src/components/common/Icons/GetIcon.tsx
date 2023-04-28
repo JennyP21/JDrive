@@ -26,7 +26,7 @@ import {
   SiGooglephotos,
   SiGoogleads,
 } from "react-icons/si";
-import { IoMdOptions } from "react-icons/io";
+import { IoIosArrowForward, IoMdOptions } from "react-icons/io";
 import { BsFileEarmarkSlides, BsSearch, BsFileEarmarkArrowUp } from "react-icons/bs";
 import {
   BiHistory,
@@ -92,6 +92,7 @@ interface IconProps {
   | "folderUpload"
   | "newFolder"
   | "image"
+  | "pathArrow"
   | "unknown";
   iconSize?: number;
   className: string;
@@ -148,7 +149,8 @@ const GetIcon = (
     folderUpload: MdDriveFolderUpload,
     newFolder: MdOutlineCreateNewFolder,
     image: AiOutlineFileImage,
-    unknown: BiFileBlank
+    unknown: BiFileBlank,
+    pathArrow: IoIosArrowForward,
   };
 
   const Icon = iconMapping[iconType] ? iconMapping[iconType] : iconMapping["unknown"];

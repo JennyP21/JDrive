@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Computers from "../Content/Computers/Computers";
 import DashboardHeader from "../Content/Dashboard Header/DashboardHeader";
 import MyDrive from "../Content/My Drive/MyDrive";
@@ -24,11 +25,13 @@ const Dashboard = ({ currentDashboard }: Props) => {
     "Storage": Storage,
   }
 
+  const [currentPath, setCurrentPath] = useState(["My Drive", "Folder"]);
+
   const Content = contentMapping[currentDashboard];
 
   return (
     <div className="dashboard">
-      <DashboardHeader currentDashboard={currentDashboard} />
+      <DashboardHeader currentPath={currentPath} currentDashboard={currentDashboard} />
       <Content />
     </div>
   );

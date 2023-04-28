@@ -4,24 +4,39 @@ import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineViewList } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
 import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
+import GetIcon from "../../../common/Icons/GetIcon";
+import React from "react";
 
 
 interface Props {
+  currentPath: string[];
   currentDashboard: string;
 }
 
-const DashboardHeader = ({ currentDashboard }: Props) => {
+const DashboardHeader = ({ currentDashboard, currentPath }: Props) => {
   const [gridLayout, setGridLayout] = useState(true);
 
   return (
     <div className="dashboard-header">
       {currentDashboard === "My Drive" ? (
         <div className="dashboard-filepath">
-          <FolderDropDow
-            contentClassName="dashboard-content"
-            folderName={currentDashboard}
-            className="filepath-name"
-          />
+          {currentPath.map((path, index) => (
+            <React.Fragment key={path + index}>
+              {currentPath.length - 1 !== index ?
+                <>
+                  <div className="dashboard-previous-folder">
+                    <span className="dashboard-title">{currentDashboard}</span>
+                  </div>
+                  <GetIcon className="dashboard-pathArrow" iconType="pathArrow" iconSize={18} />
+                </> :
+                <FolderDropDow
+                  contentClassName="dashboard-content"
+                  folderName={path}
+                  className="filepath-name"
+                  currentFolder={true}
+                />}
+            </React.Fragment>
+          ))}
         </div>
       ) : (
         <div className="dashboard-title-container">

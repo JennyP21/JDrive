@@ -5,6 +5,22 @@
 
 .dashboard-filepath {
   display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dashboard-previous-folder .dashboard-title {
+  border-radius: 25px;
+  padding: 0.3rem 0.7rem;
+}
+
+.dashboard-previous-folder .dashboard-title:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.dashboard-pathArrow {
+  margin-right: 1rem;
 }
 
 .filepath-name {
@@ -12,7 +28,6 @@
   width: fit-content;
   padding: 0.3rem 0.7rem;
   margin: 0.5rem;
-  margin-left: 0;
   border-radius: 25px;
   transform: translateX(-0.7rem);
 }

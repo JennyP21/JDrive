@@ -8,9 +8,10 @@ interface Props {
   className: string;
   contentClassName: string;
   folderName: string;
+  currentFolder?: boolean;
 }
 
-const FolderDropDow = ({ folderName, className, contentClassName }: Props) => {
+const FolderDropDow = ({ folderName, className, contentClassName, currentFolder = false }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
@@ -27,13 +28,15 @@ const FolderDropDow = ({ folderName, className, contentClassName }: Props) => {
         onClick={() => setItemVisibility(!itemVisibility)}
       >
         <span className="dashboard-title">{folderName}</span>
-        <GetIcon
-          className="dashboard-arrow"
-          iconSize={18}
-          iconType="triangleDown"
-        />
+        {currentFolder &&
+          <GetIcon
+            className="dashboard-arrow"
+            iconSize={18}
+            iconType="triangleDown"
+          />
+        }
       </div>
-      <FolderList contentClassName={contentClassName} listVisible={itemVisibility} />
+      {currentFolder && <FolderList contentClassName={contentClassName} listVisible={itemVisibility} />}
     </div>
   );
 };

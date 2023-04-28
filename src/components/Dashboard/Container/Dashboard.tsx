@@ -25,13 +25,18 @@ const Dashboard = ({ currentDashboard }: Props) => {
     "Storage": Storage,
   }
 
-  const [currentPath, setCurrentPath] = useState(["My Drive", "Folder"]);
+  const [currentPath, setCurrentPath] = useState(["My Drive", "Folder", "Folder", "Folder2"]);
 
   const Content = contentMapping[currentDashboard];
 
+  const handleFolderClick = (path: string, index: number) => {
+    const newPath = currentPath.splice(0, index + 1);
+    setCurrentPath(newPath);
+  };
+
   return (
     <div className="dashboard">
-      <DashboardHeader currentPath={currentPath} currentDashboard={currentDashboard} />
+      <DashboardHeader handleFolderClick={handleFolderClick} currentPath={currentPath} currentDashboard={currentDashboard} />
       <Content />
     </div>
   );

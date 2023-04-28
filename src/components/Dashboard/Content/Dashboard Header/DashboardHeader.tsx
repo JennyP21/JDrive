@@ -11,9 +11,10 @@ import React from "react";
 interface Props {
   currentPath: string[];
   currentDashboard: string;
+  handleFolderClick: (path: string, index: number) => void;
 }
 
-const DashboardHeader = ({ currentDashboard, currentPath }: Props) => {
+const DashboardHeader = ({ currentDashboard, currentPath, handleFolderClick }: Props) => {
   const [gridLayout, setGridLayout] = useState(true);
 
   return (
@@ -25,7 +26,7 @@ const DashboardHeader = ({ currentDashboard, currentPath }: Props) => {
               {currentPath.length - 1 !== index ?
                 <>
                   <div className="dashboard-previous-folder">
-                    <span className="dashboard-title">{currentDashboard}</span>
+                    <span className="dashboard-title" onClick={() => handleFolderClick(path, index)}>{path}</span>
                   </div>
                   <GetIcon className="dashboard-pathArrow" iconType="pathArrow" iconSize={18} />
                 </> :

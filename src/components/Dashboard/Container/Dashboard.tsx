@@ -18,7 +18,7 @@ interface Props {
 }
 
 const Dashboard = ({ currentDashboard }: Props) => {
-  type ContentType = typeof MyDrive | typeof Path;
+  type ContentType = typeof Computers | typeof Path;
   const contentMapping: { [key: string]: ContentType } = {
     "My Drive": MyDrive,
     "Computers": Computers,

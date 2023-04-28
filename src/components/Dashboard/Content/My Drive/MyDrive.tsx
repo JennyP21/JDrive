@@ -3,18 +3,25 @@ import "./myDrive.css";
 import Table, { File } from "../../../common/Table/Container/Table";
 import { getFiles } from "../../../../services/fileService";
 import { useEffect, useState } from "react";
+import { FolderProps } from "../Dashboard Header/DashboardHeader";
 
-const MyDrive = () => {
+interface Props {
+  currentPath: FolderProps[];
+}
+
+const MyDrive = ({ currentPath }: Props) => {
   const fileTitle = ["Name", "Owner", "Last Modified", "Size"];
 
   const [files, setFiles] = useState<File[]>([]);
 
   useEffect(() => {
-    const data = async () => {
-      return await getFiles().then(items => setFiles(items));
+    if (currentPath.length > 0) {
+      const data = async () => {
+        return await getFiles().then(items => setFiles(items));
+      }
+      data();
     }
-    data();
-  }, []);
+  }, [currentPath]);
 
   const suggestedFiles = [
     {

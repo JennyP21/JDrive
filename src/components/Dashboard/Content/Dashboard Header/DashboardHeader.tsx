@@ -3,7 +3,7 @@ import "./dashboardHeader.css";
 import { BsGrid3X2 } from "react-icons/bs";
 import { MdOutlineViewList } from "react-icons/md";
 import { GrCircleInformation } from "react-icons/gr";
-import FolderDropDow from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
+import FolderDropDown from "../../../common/DropDown/Container/FolderDropDown/FolderDropDown";
 import GetIcon from "../../../common/Icons/GetIcon";
 import React from "react";
 
@@ -34,7 +34,7 @@ const DashboardHeader = ({ currentDashboard, currentPath, handleFolderClick }: P
                   </div>
                   <GetIcon className="dashboard-pathArrow" iconType="pathArrow" iconSize={18} />
                 </> :
-                <FolderDropDow
+                <FolderDropDown
                   contentClassName="dashboard-content"
                   folderName={name}
                   className="filepath-name"

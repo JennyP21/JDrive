@@ -11,7 +11,7 @@ interface Props {
   currentFolder?: boolean;
 }
 
-const FolderDropDow = ({ folderName, className, contentClassName, currentFolder = false }: Props) => {
+const FolderDropDown = ({ folderName, className, contentClassName, currentFolder = false }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
@@ -41,4 +41,4 @@ const FolderDropDow = ({ folderName, className, contentClassName, currentFolder 
   );
 };
 
-export default FolderDropDow;
+export default FolderDropDown;

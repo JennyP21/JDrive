@@ -11,32 +11,14 @@ input[type="file"] {
 }
 
 .list {
-  position: absolute;
-  left: -210px;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 0 4px 1px #ccc;
   list-style-type: none;
   flex-direction: column;
-  margin: 0;
-  min-width: 250px;
+  max-width: 250px;
   border-radius: 5px;
-  z-index: 1;
-}
-
-.list-hidden {
-  height: 0;
-  overflow: hidden;
-  padding: 0;
-  box-shadow: none;
-  transition: all 0.3s linear;
-}
-
-.list-visible {
-  background-color: #fff;
-  height: fit-content;
-  overflow: visible;
   padding: 10px 0;
-  box-shadow: 0 0 4px 1px #ccc;
-  transition: all 70ms linear;
-  background-color: #fff;
 }
 
 .list-item {
@@ -45,7 +27,7 @@ input[type="file"] {
 }
 
 .list-item:hover {
-  background: #ddd;
+  background: #eee;
 }
 
 .selected {

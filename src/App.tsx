@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar/Container/Navbar";
 import LeftPanel, { LeftPanelProps } from "./components/LeftPanel/LeftPanel";
 import Dashboard from "./components/Dashboard/Container/Dashboard";
 import { useState } from "react";
+import Help from "./components/common/DropDown/Content/HelpList/Help";
+import Settings from "./components/common/DropDown/Content/SettingsList/Settings";
 
 const App = () => {
 
@@ -71,14 +73,15 @@ const App = () => {
   };
 
   return (
-    <div className="main">
-      <Navbar />
+    <div className="">
+      {/* <Navbar />
       <LeftPanel
         iconSize={18}
         onSelect={handleSelect}
         leftPanelItems={leftPanelItems}
       />
-      <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} />
+      <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} /> */}
+      <Settings />
     </div>
   );
 };

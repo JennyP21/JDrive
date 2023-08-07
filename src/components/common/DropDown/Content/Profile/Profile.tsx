@@ -1,22 +1,12 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import GetIcon from "../../../Icons/GetIcon";
 import "./profile.css";
 
-interface Props {
-  listVisible: boolean;
-}
-
-const Profile = ({ listVisible }: Props) => {
+const Profile = () => {
   const profileRef = useRef(document.createElement("div"));
 
-  useEffect(() => {
-    const listClasses = profileRef.current.classList;
-    if (listVisible) listClasses.replace("profile-hidden", "profile-visible");
-    else listClasses.replace("profile-visible", "profile-hidden");
-  }, [listVisible]);
-
   return (
-    <div ref={profileRef} className="profile profile-hidden">
+    <div ref={profileRef} className="profile">
       <div className="profile-primary-card">
         <div className="profile-basics">
           <GetIcon

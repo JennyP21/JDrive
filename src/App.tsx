@@ -6,6 +6,7 @@ import { useState } from "react";
 import Help from "./components/common/DropDown/Content/HelpList/Help";
 import Settings from "./components/common/DropDown/Content/SettingsList/Settings";
 import Menu from "./components/common/DropDown/Content/MenuList/Menu";
+import Profile from "./components/common/DropDown/Content/Profile/Profile";
 
 const App = () => {
 
@@ -82,7 +83,7 @@ const App = () => {
         leftPanelItems={leftPanelItems}
       />
       <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} /> */}
-      <Menu />
+      <Profile />
     </div>
   );
 };

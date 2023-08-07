@@ -1,22 +1,14 @@
 .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
   border-radius: 20px;
   background-color: #f1f6ff;
-  margin-left: -360px;
   position: relative;
   z-index: 1;
-}
-
-.profile-visible {
-  display: grid;
-  height: fit-content;
-  box-shadow: 0 0 1px 1px #999;
-}
-
-.profile-hidden {
-  overflow: hidden;
-  padding: 0;
-  box-shadow: none;
-  height: 0;
+  box-shadow: 0 0 1px 1px #ccc;
+  width: 380px;
+  padding: 0.5rem;
 }
 
 .profile-primary-card {
@@ -26,7 +18,6 @@
   padding: 1rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  margin: 0.5rem;
 }
 
 .profile-basics {
@@ -45,7 +36,7 @@
 }
 
 .profile-email {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
 .profile-details {
@@ -68,13 +59,12 @@
 .profile-secondary-card {
   display: grid;
   grid-template-columns: 32% 68%;
-  padding: 1rem;
+  padding: 0.7rem;
   align-items: center;
   background-color: #fff;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
-  margin: 0 0.5rem;
 }
 
 .profile-secondary-card:hover {
@@ -88,8 +78,7 @@
 .profile-signout {
   display: grid;
   grid-template-columns: 32% 68%;
-  margin: 0 0.5rem;
-  padding: 1rem;
+  padding: 0.7rem;
   align-items: center;
 }
 

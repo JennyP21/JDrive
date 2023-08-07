@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard/Container/Dashboard";
 import { useState } from "react";
 import Help from "./components/common/DropDown/Content/HelpList/Help";
 import Settings from "./components/common/DropDown/Content/SettingsList/Settings";
+import Menu from "./components/common/DropDown/Content/MenuList/Menu";
 
 const App = () => {
 
@@ -81,7 +82,7 @@ const App = () => {
         leftPanelItems={leftPanelItems}
       />
       <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} /> */}
-      <Settings />
+      <Menu />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const DropDownContent = ({ items, dataType, itemVisibility, contentClassName }: 
   };
 
   const Data = dataMapping[dataType];
-  return <Data items={items} listVisible={itemVisibility} className={contentClassName} />;
+  return <Data />;
 };
 
 export default DropDownContent;

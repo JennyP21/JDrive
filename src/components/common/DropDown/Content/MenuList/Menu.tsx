@@ -1,28 +1,31 @@
-import { useEffect, useRef } from "react";
-import "./Menu.css";
+import { useRef } from "react";
 import GetIcon from "../../../Icons/GetIcon";
+import "./Menu.css";
 
-export interface MenuItemProps {
-  iconType: string;
-  iconText: string;
-}
+const items = [
+  { iconType: "profile", iconText: "Account" },
+  { iconType: "google", iconText: "Search" },
+  { iconType: "navigation", iconText: "Maps" },
+  { iconType: "youtube", iconText: "YouTube" },
+  { iconType: "googlePlay", iconText: "Play" },
+  { iconType: "news", iconText: "News" },
+  { iconType: "gmail", iconText: "Gmail" },
+  { iconType: "meet", iconText: "Meet" },
+  { iconType: "chat", iconText: "Chat" },
+  { iconType: "contacts", iconText: "Contacts" },
+  { iconType: "drive", iconText: "Drive" },
+  { iconType: "calendar", iconText: "Calendar" },
+  { iconType: "translate", iconText: "Translate" },
+  { iconType: "photos", iconText: "Photos" },
+  { iconType: "adCenter", iconText: "My Ad Center" },
+  { iconType: "shopping", iconText: "Shopping" },
+];
 
-interface Props {
-  items: MenuItemProps[];
-  listVisible: boolean;
-}
-
-const Menu = ({ items, listVisible }: Props) => {
+const Menu = () => {
   const menuRef = useRef(document.createElement("div"));
 
-  useEffect(() => {
-    const listClasses = menuRef.current.classList;
-    if (listVisible) listClasses.replace("menu-hidden", "menu-visible");
-    else listClasses.replace("menu-visible", "menu-hidden");
-  }, [listVisible]);
-
   return (
-    <div className="menu menu-hidden" ref={menuRef}>
+    <div className="menu" ref={menuRef}>
       {items.map((item) => (
         <div className="menu-item" key={item.iconText}>
           <GetIcon

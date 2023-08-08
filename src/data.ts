@@ -1,0 +1,51 @@
+export const dashboards = [
+  {
+    id: 1,
+    iconType: "drive",
+    itemText: "My Drive",
+    expandable: true,
+    selected: true,
+  },
+  {
+    id: 2,
+    iconType: "computer",
+    itemText: "Computers",
+    expandable: true,
+    selected: false,
+  },
+  {
+    id: 3,
+    iconType: "share",
+    itemText: "Shared with me",
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 4,
+    iconType: "history",
+    itemText: "Recent",
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 5,
+    iconType: "starEmpty",
+    itemText: "Starred",
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 6,
+    iconType: "trash",
+    itemText: "Trash",
+    expandable: false,
+    selected: false,
+  },
+  {
+    id: 7,
+    iconType: "cloud",
+    itemText: "Storage",
+    expandable: false,
+    selected: false,
+  },
+];

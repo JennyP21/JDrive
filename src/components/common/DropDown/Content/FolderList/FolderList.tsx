@@ -1,14 +1,9 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useRef } from "react";
 import "./folderList.css";
 import GetIcon from "../../../Icons/GetIcon";
 import { uploadFile } from "../../../../../services/fileService";
 
-interface Props {
-  listVisible: boolean;
-  contentClassName: string;
-}
-
-const FolderList = ({ listVisible, contentClassName }: Props) => {
+const FolderList = () => {
 
   const handleFileUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -18,27 +13,21 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
       formData.append("fileSize", file.size.toString());
       formData.append("fileType", file.type);
       formData.append("file", file);
-
       await uploadFile(formData);
     }
   }
 
+  const iconSize = 25;
   const listRef = useRef(document.createElement("ul"));
-  useEffect(() => {
-    const listClasses = listRef.current.classList;
-    listVisible ? listClasses.replace("list-hidden", "list-visible") :
-      listClasses.replace("list-visible", "list-hidden");
-  }, [listVisible]);
 
   return (
-    <ul ref={listRef} className={"folder-list " + contentClassName + " list-hidden"}>
-
+    <ul ref={listRef} className="folder-list">
       <div className="folder-list-container">
         <li className="list-item">
           <GetIcon
             className="folder-list-icon"
             iconType="newFolder"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             New Folder
@@ -49,7 +38,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="fileUpload"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label htmlFor="file-upload">
             File Upload<input type="file" id="file-upload" className="folder-list-text" onChange={handleFileUpload}></input>
@@ -59,7 +48,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="folderUpload"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             Folder Upload
@@ -70,7 +59,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="document"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             Google Docs
@@ -80,7 +69,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="sheet"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             Google Sheets
@@ -90,7 +79,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="presentation"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             Google Slides
@@ -100,7 +89,7 @@ const FolderList = ({ listVisible, contentClassName }: Props) => {
           <GetIcon
             className="folder-list-icon"
             iconType="form"
-            iconSize={25}
+            iconSize={iconSize}
           />
           <label>
             Google Forms

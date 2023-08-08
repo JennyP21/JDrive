@@ -36,7 +36,7 @@ const FolderDropDown = ({ folderName, className, contentClassName, currentFolder
           />
         }
       </div>
-      {currentFolder && <FolderList contentClassName={contentClassName} listVisible={itemVisibility} />}
+      {currentFolder && <FolderList />}
     </div>
   );
 };

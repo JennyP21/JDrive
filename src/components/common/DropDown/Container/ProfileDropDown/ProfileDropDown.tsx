@@ -26,7 +26,7 @@ const DropDownContainer = ({ iconSize, iconType }: Props) => {
         iconSize={iconSize}
         onClick={() => setItemVisibility(!itemVisibility)}
       />
-      <Profile listVisible={itemVisibility} />
+      <Profile />
     </div>
   );
 };

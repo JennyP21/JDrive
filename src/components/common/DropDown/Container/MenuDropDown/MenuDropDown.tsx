@@ -1,15 +1,14 @@
 import { useState } from "react";
 import GetIcon from "../../../Icons/GetIcon";
-import Menu, { MenuItemProps } from "../../Content/MenuList/Menu";
+import Menu from "../../Content/MenuList/Menu";
 import useItemVisibility from "../../../../hooks/useItemVisibility";
 
 interface Props {
-  items: MenuItemProps[];
   iconSize: number;
   iconType: string;
 }
 
-const DropDownContainer = ({ items, iconSize, iconType }: Props) => {
+const DropDownContainer = ({ iconSize, iconType }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
@@ -27,7 +26,7 @@ const DropDownContainer = ({ items, iconSize, iconType }: Props) => {
         iconSize={iconSize}
         onClick={() => setItemVisibility(!itemVisibility)}
       />
-      <Menu listVisible={itemVisibility} items={items} />
+      <Menu />
     </div>
   );
 };

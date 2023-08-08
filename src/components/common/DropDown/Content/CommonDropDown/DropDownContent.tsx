@@ -2,15 +2,13 @@ import Help from "../HelpList/Help";
 import Settings from "../SettingsList/Settings";
 
 interface Props {
-  items: string[];
-  dataType: "options" | "settings" | "menu" | "help" | "profile";
-  itemVisibility: boolean;
+  dataType: "settings" | "help";
   contentClassName: string;
 }
 
 type DataType = typeof Settings;
 
-const DropDownContent = ({ items, dataType, itemVisibility, contentClassName }: Props) => {
+const DropDownContent = ({ dataType }: Props) => {
   const dataMapping: { [key: string]: DataType } = {
     settings: Settings,
     help: Help,

@@ -3,64 +3,13 @@ import Navbar from "./components/Navbar/Container/Navbar";
 import LeftPanel, { LeftPanelProps } from "./components/LeftPanel/LeftPanel";
 import Dashboard from "./components/Dashboard/Container/Dashboard";
 import { useState } from "react";
-import Help from "./components/common/DropDown/Content/HelpList/Help";
-import Settings from "./components/common/DropDown/Content/SettingsList/Settings";
-import Menu from "./components/common/DropDown/Content/MenuList/Menu";
-import Profile from "./components/common/DropDown/Content/Profile/Profile";
+import { dashboards } from "./data";
+import FolderDropDown from "./components/common/DropDown/Container/FolderDropDown/FolderDropDown";
+import FolderList from "./components/common/DropDown/Content/FolderList/FolderList";
 
 const App = () => {
 
-  const [leftPanelItems, setLeftPanelItems] = useState([
-    {
-      id: 1,
-      iconType: "drive",
-      itemText: "My Drive",
-      expandable: true,
-      selected: true,
-    },
-    {
-      id: 2,
-      iconType: "computer",
-      itemText: "Computers",
-      expandable: true,
-      selected: false,
-    },
-    {
-      id: 3,
-      iconType: "share",
-      itemText: "Shared with me",
-      expandable: false,
-      selected: false,
-    },
-    {
-      id: 4,
-      iconType: "history",
-      itemText: "Recent",
-      expandable: false,
-      selected: false,
-    },
-    {
-      id: 5,
-      iconType: "starEmpty",
-      itemText: "Starred",
-      expandable: false,
-      selected: false,
-    },
-    {
-      id: 6,
-      iconType: "trash",
-      itemText: "Trash",
-      expandable: false,
-      selected: false,
-    },
-    {
-      id: 7,
-      iconType: "cloud",
-      itemText: "Storage",
-      expandable: false,
-      selected: false,
-    },
-  ]);
+  const [leftPanelItems, setLeftPanelItems] = useState(dashboards);
 
   const [currentDashboard, setCurrentDashboard] = useState("My Drive");
 
@@ -83,7 +32,7 @@ const App = () => {
         leftPanelItems={leftPanelItems}
       />
       <Dashboard currentDashboard={currentDashboard} setCurrentDashboard={setCurrentDashboard} /> */}
-      <Profile />
+      <FolderList />
     </div>
   );
 };

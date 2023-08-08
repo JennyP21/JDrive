@@ -6,13 +6,13 @@ import useItemVisibility from "../../../../hooks/useItemVisibility";
 interface Props {
   items: string[];
   iconSize: number;
-  dataType: "options" | "settings" | "menu" | "help" | "profile";
+  dataType: "settings" | "help";
   iconType: "options" | "settings" | "menu" | "help" | "profile";
   className: string;
   listClassName: string;
 }
 
-const DropDownContainer = ({ items, iconSize, iconType, dataType, className, listClassName }: Props) => {
+const DropDownContainer = ({ iconSize, iconType, dataType, className, listClassName }: Props) => {
   const [itemVisibility, setItemVisibility] = useState(false);
 
   useItemVisibility({
@@ -33,8 +33,6 @@ const DropDownContainer = ({ items, iconSize, iconType, dataType, className, lis
         }}
       />
       <DropDownContent
-        items={items}
-        itemVisibility={itemVisibility}
         dataType={dataType}
         contentClassName={listClassName}
       />
